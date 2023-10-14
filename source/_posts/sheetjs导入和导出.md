@@ -1,43 +1,42 @@
 ---
 title: sheetjs导入和导出
 date: 2023-10-12 22:06:13
-tags:[sheetjs,xlsx]
-
+tags: [sheetjs, xlsx]
 ---
 
-### 一、引入xlsx包
+### 一、引入 xlsx 包
 
 ```js
-import { utils, writeFile, read } from 'xlsx'
+import { utils, writeFile, read } from "xlsx";
 ```
 
 ### 二、读取一个文件
 
 #### 1、通过传统的方式读取文件
 
-兼容性比较好的方式，创建一个type为file的元素然后点击它
+兼容性比较好的方式，创建一个 type 为 file 的元素然后点击它
 
 ```js
-const inputDom = document.createElement('input')
-inputDom.setAttribute('type', 'file')
+const inputDom = document.createElement("input");
+inputDom.setAttribute("type", "file");
 inputDom.onchange = async () => {
-      //TODO 操作文件
-const file = await inputDom.files[0].arrayBuffer()
-const worksheet = workbook.Sheets[workbook.SheetNames[0]]
-const raw_data = utils.sheet_to_json(worksheet, { header: 1 })
-}
-inputDom.click()
+  //TODO 操作文件
+  const file = await inputDom.files[0].arrayBuffer();
+  const worksheet = workbook.Sheets[workbook.SheetNames[0]];
+  const raw_data = utils.sheet_to_json(worksheet, { header: 1 });
+};
+inputDom.click();
 ```
 
-#### 2、通过比较新的api
+#### 2、通过比较新的 api
 
 ```js
-const fileList= await window.showOpenFilePicker()//默认会返回一个list
-const file = await files[0].getFile() //单选文件所以选择第一个
-const arrB = await file.ArrayBuffer()//sheetjs支持arrayBuffer格式的数据
-const workbook = read(arrB)//调用sheetjs的read方法，读取数据
-const worksheet = workbook.Sheets[workbook.SheetNames[0]]//获取到第一张表的数据
-const data = utils.sheet_to_json(worksheet, { header: 1 })//通过utils中的sheet_to_json方法转换成json
+const fileList = await window.showOpenFilePicker(); //默认会返回一个list
+const file = await files[0].getFile(); //单选文件所以选择第一个
+const arrB = await file.ArrayBuffer(); //sheetjs支持arrayBuffer格式的数据
+const workbook = read(arrB); //调用sheetjs的read方法，读取数据
+const worksheet = workbook.Sheets[workbook.SheetNames[0]]; //获取到第一张表的数据
+const data = utils.sheet_to_json(worksheet, { header: 1 }); //通过utils中的sheet_to_json方法转换成json
 ```
 
 [[Window：showOpenFilePicker() 方法 - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/showOpenFilePicker)](url)
@@ -48,50 +47,48 @@ const data = utils.sheet_to_json(worksheet, { header: 1 })//通过utils中的she
 
 ```js
 [
-    {
-      name:'张三',
-      age:10,
-      sex:'男',
-      address:'翻斗花园二号楼1001室'
-    },
-    {
-      name:'李四',
-      age:11,
-      sex:'女',
-      address:'翻斗花园二号楼1002室'
-    }
-]
+  {
+    name: "张三",
+    age: 10,
+    sex: "男",
+    address: "翻斗花园二号楼1001室",
+  },
+  {
+    name: "李四",
+    age: 11,
+    sex: "女",
+    address: "翻斗花园二号楼1002室",
+  },
+];
 ```
 
 导出时需要转化为这种样式
 
 ```js
 [
-    {
-     姓名:'张三',
-     年龄:10,
-     性别:'男',
-     地址:'翻斗花园二号楼1001室'
-    },
-    {
-     姓名:'李四',
-     年龄:11,
-     性别:'女',
-     地址:'翻斗花园二号楼1002室'
-    }
-]
+  {
+    姓名: "张三",
+    年龄: 10,
+    性别: "男",
+    地址: "翻斗花园二号楼1001室",
+  },
+  {
+    姓名: "李四",
+    年龄: 11,
+    性别: "女",
+    地址: "翻斗花园二号楼1002室",
+  },
+];
 ```
 
-在sheet中默认会使用对象的key做表格的表头，整理成这种数据可以更值观
-
-
+在 sheet 中默认会使用对象的 key 做表格的表头，整理成这种数据可以更值观
 
 ```js
-const data = [{xxxx}]
-const ws = utils.json_to_sheet(data)
-const wb = utils.book_new()
-utils.book_append_sheet(wb,ws,'第三个参数是工作簿的名称，可选')
-writeFile(wb,'文件的名字需要带后缀.xlsx')//运行到这一行代码浏览器即可提示下载
+const data = [{ xxxx }];
+const ws = utils.json_to_sheet(data);
+const wb = utils.book_new();
+utils.book_append_sheet(wb, ws, "第三个参数是工作簿的名称，可选");
+writeFile(wb, "文件的名字需要带后缀.xlsx"); //运行到这一行代码浏览器即可提示下载
 ```
 
 #### 四、其他
@@ -100,4 +97,4 @@ writeFile(wb,'文件的名字需要带后缀.xlsx')//运行到这一行代码浏
 
 导入教程：[https://docs.sheetjs.com/docs/getting-started/examples/import](url)
 
-api参考：[https://docs.sheetjs.com/docs/api/](url)
+api 参考：[https://docs.sheetjs.com/docs/api/](url)
