@@ -16,26 +16,21 @@
   <meta name="author" content="wangyuan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言先看一个效果   很简单，通过鼠标移入方向的不同做一些操作，在这个例子中只讨论实现判断鼠标移入方向的方式 思考 例如在这个蓝色方框中，通过对角线分割四个单独的三角形，我们在三角形的焦点建立一个坐标系，在这个方框中对于当前坐标系来说，我们只要计算出来方框中某一个点在坐标系中的位置到原点的连接线相对于 x 轴正轴方向的角度就可以判断出点在方框中的位置。 代码&#x2F;&#x2F;  获取元素 const conta">
+    <meta name="description" content="先前我总觉得思念二字太俗气，自从遇见了你，我才自知是个俗人 -- 《甲方乙方》  当你在我眼前的时候，你是一切；当你不在我眼前的时候，一切是你 -- 《编辑部的故事》  有几次我梦见你，你如此清晰的站在我面前，是我激动不已，一旦惊醒，心如刀绞 -- 《不见不散》  人生乐在相知心，我就是一把干柴 -- 《编辑部的故事》  我本将心向明月，奈何明月照沟渠 -- 《天下无贼》">
 <meta property="og:type" content="article">
-<meta property="og:title" content="鼠标移入方向的解决方式">
-<meta property="og:url" content="http://wangyuan.online/2023/03/12/%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%85%A5%E6%96%B9%E5%90%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="http://wangyuan.online/2023/10/26/hello-world/index.html">
 <meta property="og:site_name" content="阿源的小站">
-<meta property="og:description" content="前言先看一个效果   很简单，通过鼠标移入方向的不同做一些操作，在这个例子中只讨论实现判断鼠标移入方向的方式 思考 例如在这个蓝色方框中，通过对角线分割四个单独的三角形，我们在三角形的焦点建立一个坐标系，在这个方框中对于当前坐标系来说，我们只要计算出来方框中某一个点在坐标系中的位置到原点的连接线相对于 x 轴正轴方向的角度就可以判断出点在方框中的位置。 代码&#x2F;&#x2F;  获取元素 const conta">
+<meta property="og:description" content="先前我总觉得思念二字太俗气，自从遇见了你，我才自知是个俗人 -- 《甲方乙方》  当你在我眼前的时候，你是一切；当你不在我眼前的时候，一切是你 -- 《编辑部的故事》  有几次我梦见你，你如此清晰的站在我面前，是我激动不已，一旦惊醒，心如刀绞 -- 《不见不散》  人生乐在相知心，我就是一把干柴 -- 《编辑部的故事》  我本将心向明月，奈何明月照沟渠 -- 《天下无贼》">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://oss.wangyuan.cool/blog/screenshots.gif">
-<meta property="og:image" content="https://oss.wangyuan.cool/blog/zhuobiaoxi.jpg">
-<meta property="article:published_time" content="2023-03-12T18:26:56.000Z">
+<meta property="article:published_time" content="2023-10-26T09:21:01.071Z">
 <meta property="article:modified_time" content="2023-10-26T09:21:01.071Z">
 <meta property="article:author" content="wangyuan">
-<meta property="article:tag" content="js">
-<meta property="article:tag" content="animation">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://oss.wangyuan.cool/blog/screenshots.gif">
   
   
   
-  <title>鼠标移入方向的解决方式 - 阿源的小站</title>
+  <title>Hello World - 阿源的小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -177,7 +172,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">鼠标移入方向的解决方式</span>
+            <span id="subtitle">Hello World</span>
           
         </div>
 
@@ -188,8 +183,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-12 18:26" pubdate>
-          2023年3月12日 晚上
+        <time datetime="2023-10-26 09:21" pubdate>
+          2023年10月26日 上午
         </time>
       </span>
     
@@ -200,7 +195,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          169 字
         
       </span>
     
@@ -211,7 +206,7 @@
         
         
         
-          11 分钟
+          2 分钟
         
       </span>
     
@@ -249,49 +244,25 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">鼠标移入方向的解决方式</h1>
+            <h1 style="display: none">Hello World</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>先看一个效果 <br> <img src="https://oss.wangyuan.cool/blog/screenshots.gif" srcset="/img/loading.gif" lazyload alt="效果展示"> <br>很简单，通过鼠标移入方向的不同做一些操作，在这个例子中只讨论实现判断鼠标移入方向的方式</p>
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p><img src="https://oss.wangyuan.cool/blog/zhuobiaoxi.jpg" srcset="/img/loading.gif" lazyload alt="坐标系"> <br>例如在这个蓝色方框中，通过对角线分割四个单独的三角形，我们在三角形的焦点建立一个坐标系，在这个方框中对于当前坐标系来说，我们只要计算出来方框中某一个点在坐标系中的位置到原点的连接线相对于 x 轴正轴方向的角度就可以判断出点在方框中的位置。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><div class="code-wrapper"><pre><code class="hljs arduino"><span class="hljs-comment">//  获取元素</span>
-<span class="hljs-type">const</span> container = <span class="hljs-built_in">ref</span>();
-<span class="hljs-type">const</span> mainFun = () =&gt; &#123;
-  <span class="hljs-comment">//得到指定元素的宽高数据</span>
-  let rect = container.value.<span class="hljs-built_in">getBoundingClientRect</span>();
-  <span class="hljs-comment">//通过元素的宽和高计算出∠θ的反正切，也就是计算出右侧三角形的分界弧度</span>
-  <span class="hljs-type">const</span> theta = Math.<span class="hljs-built_in">atan</span>(rect.height / rect.width);
-  <span class="hljs-comment">//给元素添加鼠标移入时间</span>
-  container.value.<span class="hljs-built_in">addEventListener</span>(<span class="hljs-string">&quot;mouseenter&quot;</span>, (e) =&gt; &#123;
-    <span class="hljs-comment">// 得到鼠标移入时在坐标系中对应的x轴的值</span>
-    <span class="hljs-type">const</span> x = e.offsetX - rect.width / <span class="hljs-number">2</span>;
-    <span class="hljs-comment">// 得到鼠标移入时在坐标系中对应的y轴的值</span>
-    <span class="hljs-type">const</span> y = rect.height / <span class="hljs-number">2</span> - e.offsetY;
-    <span class="hljs-comment">// math.atan2是js提供的方法，返回正x轴到从(0,0)点到(x,y)点之间的平面角度，计算出鼠标移入时的坐标点到x正轴的角度，</span>
-    <span class="hljs-type">const</span> d = Math.<span class="hljs-built_in">atan2</span>(y, x);
-    let dire;
-    <span class="hljs-comment">// 通过角度判断是从哪个方向移入的</span>
-    <span class="hljs-keyword">if</span> (d &lt; theta &amp;&amp; d &gt;= -theta) &#123;
-      dire = <span class="hljs-string">&quot;right&quot;</span>;
-    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (d &gt;= theta &amp;&amp; d &lt; Math.PI - theta) &#123;
-      dire = <span class="hljs-string">&quot;up&quot;</span>;
-    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (d &lt; -theta &amp;&amp; d &gt;= theta - Math.PI) &#123;
-      dire = <span class="hljs-string">&quot;down&quot;</span>;
-    &#125; <span class="hljs-keyword">else</span> &#123;
-      dire = <span class="hljs-string">&quot;left&quot;</span>;
-    &#125;
-    <span class="hljs-comment">//通过添加类名改变元素的动画效果和移入效果</span>
-    container.value.classList.<span class="hljs-built_in">add</span>(dire);
-  &#125;);
-  <span class="hljs-comment">//移出鼠标时还原类名</span>
-  container.value.<span class="hljs-built_in">addEventListener</span>(<span class="hljs-string">&quot;mouseleave&quot;</span>, () =&gt; &#123;
-    container.value.className = <span class="hljs-string">&quot;mouse-entry-direction-body&quot;</span>;
-  &#125;);
-&#125;;</code></pre></div>
+                <div class="code-wrapper"><pre><code class="hljs ada">先前我总觉得思念二字太俗气，自从遇见了你，我才自知是个俗人
+<span class="hljs-comment">-- 《甲方乙方》</span></code></pre></div>
 
-<h3 id="over"><a href="#over" class="headerlink" title="over"></a>over</h3><p>通过在 container 上覆盖三角元素的方法也可以解决这个问题，但是会增加不必要的 html 元素，并且如果需要在元素中有更多操作时更复杂。</p>
+<div class="code-wrapper"><pre><code class="hljs ada">当你在我眼前的时候，你是一切；当你不在我眼前的时候，一切是你
+<span class="hljs-comment">-- 《编辑部的故事》</span></code></pre></div>
+
+<div class="code-wrapper"><pre><code class="hljs ada">有几次我梦见你，你如此清晰的站在我面前，是我激动不已，一旦惊醒，心如刀绞
+<span class="hljs-comment">-- 《不见不散》</span></code></pre></div>
+
+<div class="code-wrapper"><pre><code class="hljs ada">人生乐在相知心，我就是一把干柴
+<span class="hljs-comment">-- 《编辑部的故事》</span></code></pre></div>
+
+<div class="code-wrapper"><pre><code class="hljs ada">我本将心向明月，奈何明月照沟渠
+<span class="hljs-comment">-- 《天下无贼》</span></code></pre></div>
 
                 
               </div>
@@ -300,15 +271,6 @@
             <div>
               <div class="post-metas my-3">
   
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/js/">#js</a>
-      
-        <a href="/tags/animation/">#animation</a>
-      
-    </div>
   
 </div>
 
@@ -320,9 +282,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/09/amd%E6%98%BE%E5%8D%A1%E5%85%89%E6%A0%87%E5%8F%98%E7%99%BD/" title="amd显卡光标变白">
+                      <a href="/2023/10/26/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%AB%AF%E5%8F%A3%E5%8F%B7%E4%B9%B1%E8%B7%B3/" title="开发中端口号乱跳">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">amd显卡光标变白</span>
+                        <span class="hidden-mobile">开发中端口号乱跳</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -330,8 +292,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/25/BEM%E5%91%BD%E5%90%8D%E7%AE%A1%E7%90%86%E6%A0%B7%E5%BC%8F/" title="BEM命名管理样式">
-                        <span class="hidden-mobile">BEM命名管理样式</span>
+                      <a href="/2023/10/12/sheetjs%E5%AF%BC%E5%85%A5%E5%92%8C%E5%AF%BC%E5%87%BA/" title="sheetjs导入和导出">
+                        <span class="hidden-mobile">sheetjs导入和导出</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

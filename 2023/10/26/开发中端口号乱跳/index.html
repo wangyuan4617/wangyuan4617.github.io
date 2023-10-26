@@ -16,26 +16,27 @@
   <meta name="author" content="wangyuan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言先看一个效果   很简单，通过鼠标移入方向的不同做一些操作，在这个例子中只讨论实现判断鼠标移入方向的方式 思考 例如在这个蓝色方框中，通过对角线分割四个单独的三角形，我们在三角形的焦点建立一个坐标系，在这个方框中对于当前坐标系来说，我们只要计算出来方框中某一个点在坐标系中的位置到原点的连接线相对于 x 轴正轴方向的角度就可以判断出点在方框中的位置。 代码&#x2F;&#x2F;  获取元素 const conta">
+    <meta name="description" content="一、情况概述使用windows 11开发，在偶然的情况下会出现1888、8080、8000端口被占用，导致项目启动到别的端口号上，甚至每次启动都不一样 当这个情况出现后，可能重启一次能解决问题，可能一直重启都无法解决问题，并且使用 netstat -ano | findstr [端口号]  也无法找到占用端口的程序，但是项目无法正确的在1888上启动 二、造成这种情况的原因1、windows里有一">
 <meta property="og:type" content="article">
-<meta property="og:title" content="鼠标移入方向的解决方式">
-<meta property="og:url" content="http://wangyuan.online/2023/03/12/%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%85%A5%E6%96%B9%E5%90%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:title" content="开发中端口号乱跳">
+<meta property="og:url" content="http://wangyuan.online/2023/10/26/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%AB%AF%E5%8F%A3%E5%8F%B7%E4%B9%B1%E8%B7%B3/index.html">
 <meta property="og:site_name" content="阿源的小站">
-<meta property="og:description" content="前言先看一个效果   很简单，通过鼠标移入方向的不同做一些操作，在这个例子中只讨论实现判断鼠标移入方向的方式 思考 例如在这个蓝色方框中，通过对角线分割四个单独的三角形，我们在三角形的焦点建立一个坐标系，在这个方框中对于当前坐标系来说，我们只要计算出来方框中某一个点在坐标系中的位置到原点的连接线相对于 x 轴正轴方向的角度就可以判断出点在方框中的位置。 代码&#x2F;&#x2F;  获取元素 const conta">
+<meta property="og:description" content="一、情况概述使用windows 11开发，在偶然的情况下会出现1888、8080、8000端口被占用，导致项目启动到别的端口号上，甚至每次启动都不一样 当这个情况出现后，可能重启一次能解决问题，可能一直重启都无法解决问题，并且使用 netstat -ano | findstr [端口号]  也无法找到占用端口的程序，但是项目无法正确的在1888上启动 二、造成这种情况的原因1、windows里有一">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://oss.wangyuan.cool/blog/screenshots.gif">
-<meta property="og:image" content="https://oss.wangyuan.cool/blog/zhuobiaoxi.jpg">
-<meta property="article:published_time" content="2023-03-12T18:26:56.000Z">
+<meta property="article:published_time" content="2023-10-26T14:46:57.000Z">
 <meta property="article:modified_time" content="2023-10-26T09:21:01.071Z">
 <meta property="article:author" content="wangyuan">
-<meta property="article:tag" content="js">
-<meta property="article:tag" content="animation">
+<meta property="article:tag" content="windows">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="nodejs">
+<meta property="article:tag" content="react">
+<meta property="article:tag" content="vite">
+<meta property="article:tag" content="port">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://oss.wangyuan.cool/blog/screenshots.gif">
   
   
   
-  <title>鼠标移入方向的解决方式 - 阿源的小站</title>
+  <title>开发中端口号乱跳 - 阿源的小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -177,7 +178,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">鼠标移入方向的解决方式</span>
+            <span id="subtitle">开发中端口号乱跳</span>
           
         </div>
 
@@ -188,8 +189,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-12 18:26" pubdate>
-          2023年3月12日 晚上
+        <time datetime="2023-10-26 14:46" pubdate>
+          2023年10月26日 下午
         </time>
       </span>
     
@@ -200,7 +201,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          1.3k 字
         
       </span>
     
@@ -249,49 +250,47 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">鼠标移入方向的解决方式</h1>
+            <h1 style="display: none">开发中端口号乱跳</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>先看一个效果 <br> <img src="https://oss.wangyuan.cool/blog/screenshots.gif" srcset="/img/loading.gif" lazyload alt="效果展示"> <br>很简单，通过鼠标移入方向的不同做一些操作，在这个例子中只讨论实现判断鼠标移入方向的方式</p>
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p><img src="https://oss.wangyuan.cool/blog/zhuobiaoxi.jpg" srcset="/img/loading.gif" lazyload alt="坐标系"> <br>例如在这个蓝色方框中，通过对角线分割四个单独的三角形，我们在三角形的焦点建立一个坐标系，在这个方框中对于当前坐标系来说，我们只要计算出来方框中某一个点在坐标系中的位置到原点的连接线相对于 x 轴正轴方向的角度就可以判断出点在方框中的位置。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><div class="code-wrapper"><pre><code class="hljs arduino"><span class="hljs-comment">//  获取元素</span>
-<span class="hljs-type">const</span> container = <span class="hljs-built_in">ref</span>();
-<span class="hljs-type">const</span> mainFun = () =&gt; &#123;
-  <span class="hljs-comment">//得到指定元素的宽高数据</span>
-  let rect = container.value.<span class="hljs-built_in">getBoundingClientRect</span>();
-  <span class="hljs-comment">//通过元素的宽和高计算出∠θ的反正切，也就是计算出右侧三角形的分界弧度</span>
-  <span class="hljs-type">const</span> theta = Math.<span class="hljs-built_in">atan</span>(rect.height / rect.width);
-  <span class="hljs-comment">//给元素添加鼠标移入时间</span>
-  container.value.<span class="hljs-built_in">addEventListener</span>(<span class="hljs-string">&quot;mouseenter&quot;</span>, (e) =&gt; &#123;
-    <span class="hljs-comment">// 得到鼠标移入时在坐标系中对应的x轴的值</span>
-    <span class="hljs-type">const</span> x = e.offsetX - rect.width / <span class="hljs-number">2</span>;
-    <span class="hljs-comment">// 得到鼠标移入时在坐标系中对应的y轴的值</span>
-    <span class="hljs-type">const</span> y = rect.height / <span class="hljs-number">2</span> - e.offsetY;
-    <span class="hljs-comment">// math.atan2是js提供的方法，返回正x轴到从(0,0)点到(x,y)点之间的平面角度，计算出鼠标移入时的坐标点到x正轴的角度，</span>
-    <span class="hljs-type">const</span> d = Math.<span class="hljs-built_in">atan2</span>(y, x);
-    let dire;
-    <span class="hljs-comment">// 通过角度判断是从哪个方向移入的</span>
-    <span class="hljs-keyword">if</span> (d &lt; theta &amp;&amp; d &gt;= -theta) &#123;
-      dire = <span class="hljs-string">&quot;right&quot;</span>;
-    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (d &gt;= theta &amp;&amp; d &lt; Math.PI - theta) &#123;
-      dire = <span class="hljs-string">&quot;up&quot;</span>;
-    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (d &lt; -theta &amp;&amp; d &gt;= theta - Math.PI) &#123;
-      dire = <span class="hljs-string">&quot;down&quot;</span>;
-    &#125; <span class="hljs-keyword">else</span> &#123;
-      dire = <span class="hljs-string">&quot;left&quot;</span>;
-    &#125;
-    <span class="hljs-comment">//通过添加类名改变元素的动画效果和移入效果</span>
-    container.value.classList.<span class="hljs-built_in">add</span>(dire);
-  &#125;);
-  <span class="hljs-comment">//移出鼠标时还原类名</span>
-  container.value.<span class="hljs-built_in">addEventListener</span>(<span class="hljs-string">&quot;mouseleave&quot;</span>, () =&gt; &#123;
-    container.value.className = <span class="hljs-string">&quot;mouse-entry-direction-body&quot;</span>;
-  &#125;);
-&#125;;</code></pre></div>
+                <h3 id="一、情况概述"><a href="#一、情况概述" class="headerlink" title="一、情况概述"></a>一、情况概述</h3><p>使用windows 11开发，在偶然的情况下会出现1888、8080、8000端口被占用，导致项目启动到别的端口号上，甚至每次启动都不一样</p>
+<p>当这个情况出现后，可能重启一次能解决问题，可能一直重启都无法解决问题，并且使用</p>
+<div class="code-wrapper"><pre><code class="hljs shell">netstat -ano | findstr [端口号]</code></pre></div>
 
-<h3 id="over"><a href="#over" class="headerlink" title="over"></a>over</h3><p>通过在 container 上覆盖三角元素的方法也可以解决这个问题，但是会增加不必要的 html 元素，并且如果需要在元素中有更多操作时更复杂。</p>
+<p>也无法找到占用端口的程序，但是项目无法正确的在1888上启动</p>
+<h3 id="二、造成这种情况的原因"><a href="#二、造成这种情况的原因" class="headerlink" title="二、造成这种情况的原因"></a>二、造成这种情况的原因</h3><p>1、windows里有一个功能叫 &lt; TCP 动态端口范围 &gt;，在这个范围里的端口会被一些服务占用 </p>
+<ul>
+<li><p> Windows Vista（或 Windows Server 2008）之前，动态端口范围是 1025 到 5000</p>
+</li>
+<li><p>在 Windows Vista（或 Windows Server 2008）之后，默认起始端口为 49152，默认结束端口为 65535</p>
+</li>
+</ul>
+<p>2、如果安装了 Hyper-V，那么 Hyper-V 会为容器宿主网络服务（Windows Container Host Networking Service）随机保留一些端口号使用</p>
+<p>旧的windows为了遵守 Internet 分配号码颁发机构 (IANA) 建议，把端口从1025-5000改到了49152-65535</p>
+<p>在一些情况下windows自动更新会把起始端口号设置为1025，那么1888、8000等端口就不能使用了，所以会出现项目启动端口乱跳</p>
+<h3 id="三、解决方案"><a href="#三、解决方案" class="headerlink" title="三、解决方案"></a>三、解决方案</h3><p>使用：</p>
+<div class="code-wrapper"><pre><code class="hljs powershell">netsh init ipv4 show dynamicport tcp</code></pre></div>
+
+<p>可以查看当前系统中为&lt; TCP 动态端口&gt;分配的端口范围</p>
+<p>使用：</p>
+<div class="code-wrapper"><pre><code class="hljs powershell">netsh int ipv4 show excludedportrange protocol=tcp</code></pre></div>
+
+<p>可以查看被征用的端口范围，如果发现要使用的端口在这个范围内，则会出现端口号乱跑的情况</p>
+<p>1、解决方案：排除指定的端口，让系统不占用指定的端口</p>
+<div class="code-wrapper"><pre><code class="hljs powershell">netsh int ipv4 add excludedportrange  protocol=tcp startport=<span class="hljs-number">1888</span> numberofports=<span class="hljs-number">10</span>
+<span class="hljs-comment"># 这里1888为开始的端口，10的意思为1888 - 1898 这10个端口全都要移出保留端口，如果只想8081不作为端口，那么10可以改成1</span></code></pre></div>
+
+<p>2、修改&lt; TCP动态端口&gt;的范围，把常用的端口划出去，或者划分不常用的端口留给系统使用</p>
+<div class="code-wrapper"><pre><code class="hljs powershell">netsh int ipv4 <span class="hljs-built_in">set</span> dynamic tcp <span class="hljs-built_in">start</span>=<span class="hljs-number">49152</span> num=<span class="hljs-number">16384</span>
+netsh int ipv6 <span class="hljs-built_in">set</span> dynamic tcp <span class="hljs-built_in">start</span>=<span class="hljs-number">49152</span> num=<span class="hljs-number">16384</span>
+<span class="hljs-comment"># 从49152开始的16384个端口，也就是49152-65535，提供给&lt;TCP动态端口&gt;服务</span></code></pre></div>
+
+<p>3、重启电脑，就可以正常使用端口了</p>
+<h3 id="四、参考"><a href="#四、参考" class="headerlink" title="四、参考"></a>四、参考</h3><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/troubleshoot/windows-server/networking/reserve-a-range-of-ephemeral-ports">保留一系列临时端口 - Windows Server | Microsoft Learn</a></p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-CN/troubleshoot/windows-server/networking/default-dynamic-port-range-tcpip-chang">Windows Vista 和 Windows Server 2008 中 TCP&#x2F;IP 的默认动态端口范围已更改 - Windows Server | Microsoft Learn</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weter_drop/article/details/129786201">一文解决windows电脑端口被占用问题，专治疑难杂症和port xxxx was already in use 说再见_windows端口被占用怎么解决_T-OPEN的博客-CSDN博客</a></p>
 
                 
               </div>
@@ -304,9 +303,17 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/js/">#js</a>
+        <a href="/tags/windows/">#windows</a>
       
-        <a href="/tags/animation/">#animation</a>
+        <a href="/tags/vue/">#vue</a>
+      
+        <a href="/tags/nodejs/">#nodejs</a>
+      
+        <a href="/tags/react/">#react</a>
+      
+        <a href="/tags/vite/">#vite</a>
+      
+        <a href="/tags/port/">#port</a>
       
     </div>
   
@@ -320,18 +327,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/09/amd%E6%98%BE%E5%8D%A1%E5%85%89%E6%A0%87%E5%8F%98%E7%99%BD/" title="amd显卡光标变白">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">amd显卡光标变白</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/25/BEM%E5%91%BD%E5%90%8D%E7%AE%A1%E7%90%86%E6%A0%B7%E5%BC%8F/" title="BEM命名管理样式">
-                        <span class="hidden-mobile">BEM命名管理样式</span>
+                      <a href="/2023/10/26/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
