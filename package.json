@@ -8,7 +8,7 @@
     "deploy": "hexo deploy",
     "server": "hexo server",
     "dev": "hexo server",
-    "new": "hexo new sheetjs导入和导出"
+    "new": "hexo new"
   },
   "hexo": {
     "version": "6.3.0"
