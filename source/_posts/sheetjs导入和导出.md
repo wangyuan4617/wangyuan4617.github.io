@@ -41,7 +41,25 @@ const data = utils.sheet_to_json(worksheet, { header: 1 }); //通过utils中的s
 
 [[Window：showOpenFilePicker() 方法 - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/showOpenFilePicker)](url)
 
-#### 三、导出数据
+### 三、导出数据
+
+#### 1、可以通过页面中 table 元素导出
+
+```js
+const wb = XLSX.utils.table_to_book(document.querySelector("#el-table-result"));
+const wbout = XLSX.write(wb, {
+  bookType: "xlsx",
+  bookSST: true,
+  type: "array",
+});
+saveAs(new Blob([wbout], { type: "application/octet-stream" }), "文件名.xlsx");
+```
+
+这种方式一些缺点:
+1、如果是表格中使用了输入框，则导出的表格中没有输入框中的数据  
+2、如果表格中使用了按钮，则导出的表格中会夹带按钮上的文字
+
+#### 2、通过 json 数组导出
 
 通常情况下，表格的数据格式类似这种
 
