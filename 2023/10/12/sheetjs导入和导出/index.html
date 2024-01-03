@@ -24,7 +24,7 @@
 <meta property="og:description" content="一、引入 xlsx 包import &amp;#123; utils, writeFile, read &amp;#125; from &quot;xlsx&quot;;  二、读取一个文件1、通过传统的方式读取文件兼容性比较好的方式，创建一个 type 为 file 的元素然后点击它 const inputDom &#x3D; document.createElement(&quot;input&quot;); inpu">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-12T22:06:13.000Z">
-<meta property="article:modified_time" content="2024-01-03T07:58:10.523Z">
+<meta property="article:modified_time" content="2024-01-03T10:31:02.858Z">
 <meta property="article:author" content="wangyuan">
 <meta property="article:tag" content="sheetjs">
 <meta property="article:tag" content="xlsx">
@@ -197,7 +197,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.1k 字
+          2.5k 字
         
       </span>
     
@@ -208,7 +208,7 @@
         
         
         
-          18 分钟
+          21 分钟
         
       </span>
     
@@ -271,7 +271,7 @@ inputDom.<span class="hljs-title function_">click</span>();</code></pre></div>
 <span class="hljs-keyword">const</span> worksheet = workbook.<span class="hljs-property">Sheets</span>[workbook.<span class="hljs-property">SheetNames</span>[<span class="hljs-number">0</span>]]; <span class="hljs-comment">//获取到第一张表的数据</span>
 <span class="hljs-keyword">const</span> data = utils.<span class="hljs-title function_">sheet_to_json</span>(worksheet, &#123; <span class="hljs-attr">header</span>: <span class="hljs-number">1</span> &#125;); <span class="hljs-comment">//通过utils中的sheet_to_json方法转换成json</span></code></pre></div>
 
-<p><a href="url"><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/showOpenFilePicker">Window：showOpenFilePicker() 方法 - Web API 接口参考 | MDN</a></a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/showOpenFilePicker">Window：showOpenFilePicker() 方法 - Web API 接口参考 | MDN</a></p>
 <h3 id="三、导出数据"><a href="#三、导出数据" class="headerlink" title="三、导出数据"></a>三、导出数据</h3><h4 id="1、可以通过页面中-table-元素导出"><a href="#1、可以通过页面中-table-元素导出" class="headerlink" title="1、可以通过页面中 table 元素导出"></a>1、可以通过页面中 table 元素导出</h4><div class="code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> wb = <span class="hljs-variable constant_">XLSX</span>.<span class="hljs-property">utils</span>.<span class="hljs-title function_">table_to_book</span>(<span class="hljs-variable language_">document</span>.<span class="hljs-title function_">querySelector</span>(<span class="hljs-string">&quot;#el-table-result&quot;</span>));
 <span class="hljs-keyword">const</span> wbout = <span class="hljs-variable constant_">XLSX</span>.<span class="hljs-title function_">write</span>(wb, &#123;
   <span class="hljs-attr">bookType</span>: <span class="hljs-string">&quot;xlsx&quot;</span>,
@@ -281,7 +281,7 @@ inputDom.<span class="hljs-title function_">click</span>();</code></pre></div>
 <span class="hljs-title function_">saveAs</span>(<span class="hljs-keyword">new</span> <span class="hljs-title class_">Blob</span>([wbout], &#123; <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;application/octet-stream&quot;</span> &#125;), <span class="hljs-string">&quot;文件名.xlsx&quot;</span>);</code></pre></div>
 
 <p>这种方式一些缺点:<br>1、如果是表格中使用了输入框，则导出的表格中没有输入框中的数据<br>2、如果表格中使用了按钮，则导出的表格中会夹带按钮上的文字</p>
-<h4 id="2、通过-json-数组导出"><a href="#2、通过-json-数组导出" class="headerlink" title="2、通过 json 数组导出"></a>2、通过 json 数组导出</h4><p>通常情况下，表格的数据格式类似这种</p>
+<h4 id="2、通过-json-对象数组导出"><a href="#2、通过-json-对象数组导出" class="headerlink" title="2、通过 json 对象数组导出"></a>2、通过 json 对象数组导出</h4><p>通常情况下，表格的数据格式类似这种</p>
 <div class="code-wrapper"><pre><code class="hljs js">[
   &#123;
     <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;张三&quot;</span>,
@@ -320,9 +320,23 @@ inputDom.<span class="hljs-title function_">click</span>();</code></pre></div>
 utils.<span class="hljs-title function_">book_append_sheet</span>(wb, ws, <span class="hljs-string">&quot;第三个参数是工作簿的名称，可选&quot;</span>);
 <span class="hljs-title function_">writeFile</span>(wb, <span class="hljs-string">&quot;文件的名字需要带后缀.xlsx&quot;</span>); <span class="hljs-comment">//运行到这一行代码浏览器即可提示下载</span></code></pre></div>
 
-<h4 id="四、其他"><a href="#四、其他" class="headerlink" title="四、其他"></a>四、其他</h4><p>导出教程：<a href="url">https://docs.sheetjs.com/docs/getting-started/examples/export</a></p>
-<p>导入教程：<a href="url">https://docs.sheetjs.com/docs/getting-started/examples/import</a></p>
-<p>api 参考：<a href="url">https://docs.sheetjs.com/docs/api/</a></p>
+<h4 id="3、通过-json-数组导出"><a href="#3、通过-json-数组导出" class="headerlink" title="3、通过 json 数组导出"></a>3、通过 json 数组导出</h4><p>这种导出方式要求数据为一个二维数组，像一张表格平铺</p>
+<div class="code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> data = [
+  [<span class="hljs-string">&quot;姓名&quot;</span>, <span class="hljs-string">&quot;年龄&quot;</span>, <span class="hljs-string">&quot;性别&quot;</span>, <span class="hljs-string">&quot;地址&quot;</span>],
+  [<span class="hljs-string">&quot;张三&quot;</span>, <span class="hljs-number">10</span>, <span class="hljs-string">&quot;男&quot;</span>, <span class="hljs-string">&quot;翻斗花园二号楼1001室&quot;</span>],
+  [<span class="hljs-string">&quot;李四&quot;</span>, <span class="hljs-number">11</span>, <span class="hljs-string">&quot;女&quot;</span>, <span class="hljs-string">&quot;翻斗花园二号楼1002室&quot;</span>],
+];</code></pre></div>
+
+<p>然后将数组导出</p>
+<div class="code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> ws = utils.<span class="hljs-title function_">aoa_to_sheet</span>(data);
+<span class="hljs-keyword">const</span> wb = utils.<span class="hljs-title function_">book_new</span>();
+utils.<span class="hljs-title function_">book_append_sheet</span>(wb, ws, <span class="hljs-string">&quot;第三个参数是工作簿的名称，可选&quot;</span>);
+<span class="hljs-title function_">writeFile</span>(wb, <span class="hljs-string">&quot;文件的名字需要带后缀.xlsx&quot;</span>);</code></pre></div>
+
+<h4 id="四、其他"><a href="#四、其他" class="headerlink" title="四、其他"></a>四、其他</h4><p>导出教程：<a target="_blank" rel="noopener" href="https://docs.sheetjs.com/docs/getting-started/examples/export">https://docs.sheetjs.com/docs/getting-started/examples/export</a></p>
+<p>导入教程：<a target="_blank" rel="noopener" href="https://docs.sheetjs.com/docs/getting-started/examples/import">https://docs.sheetjs.com/docs/getting-started/examples/import</a></p>
+<p>api 参考：<a target="_blank" rel="noopener" href="https://docs.sheetjs.com/docs/api/">https://docs.sheetjs.com/docs/api/</a></p>
+<div class="code-wrapper"><pre><code class="hljs"></code></pre></div>
 
                 
               </div>
