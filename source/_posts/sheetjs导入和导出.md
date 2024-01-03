@@ -39,7 +39,7 @@ const worksheet = workbook.Sheets[workbook.SheetNames[0]]; //获取到第一张�
 const data = utils.sheet_to_json(worksheet, { header: 1 }); //通过utils中的sheet_to_json方法转换成json
 ```
 
-[[Window：showOpenFilePicker() 方法 - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/showOpenFilePicker)](url)
+[Window：showOpenFilePicker() 方法 - Web API 接口参考 | MDN](https://developer.mozilla.org/zh-CN/docs/Web/API/Window/showOpenFilePicker)
 
 ### 三、导出数据
 
@@ -59,7 +59,7 @@ saveAs(new Blob([wbout], { type: "application/octet-stream" }), "文件名.xlsx"
 1、如果是表格中使用了输入框，则导出的表格中没有输入框中的数据  
 2、如果表格中使用了按钮，则导出的表格中会夹带按钮上的文字
 
-#### 2、通过 json 数组导出
+#### 2、通过 json 对象数组导出
 
 通常情况下，表格的数据格式类似这种
 
@@ -109,10 +109,35 @@ utils.book_append_sheet(wb, ws, "第三个参数是工作簿的名称，可选")
 writeFile(wb, "文件的名字需要带后缀.xlsx"); //运行到这一行代码浏览器即可提示下载
 ```
 
-#### 四、其他
+#### 3、通过 json 数组导出
 
-导出教程：[https://docs.sheetjs.com/docs/getting-started/examples/export](url)
+这种导出方式要求数据为一个二维数组，像一张表格平铺
 
-导入教程：[https://docs.sheetjs.com/docs/getting-started/examples/import](url)
+```js
+const data = [
+  ["姓名", "年龄", "性别", "地址"],
+  ["张三", 10, "男", "翻斗花园二号楼1001室"],
+  ["李四", 11, "女", "翻斗花园二号楼1002室"],
+];
+```
 
-api 参考：[https://docs.sheetjs.com/docs/api/](url)
+然后将数组导出
+
+```js
+const ws = utils.aoa_to_sheet(data);
+const wb = utils.book_new();
+utils.book_append_sheet(wb, ws, "第三个参数是工作簿的名称，可选");
+writeFile(wb, "文件的名字需要带后缀.xlsx");
+```
+
+### 四、其他
+
+导出教程：[https://docs.sheetjs.com/docs/getting-started/examples/export](https://docs.sheetjs.com/docs/getting-started/examples/export)
+
+导入教程：[https://docs.sheetjs.com/docs/getting-started/examples/import](https://docs.sheetjs.com/docs/getting-started/examples/import)
+
+api 参考：[https://docs.sheetjs.com/docs/api/](https://docs.sheetjs.com/docs/api/)
+
+```
+
+```
