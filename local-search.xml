@@ -4,9 +4,32 @@
   
   
   <entry>
+    <title>vlmcsd 部署</title>
+    <link href="/2024/04/24/%E3%80%90vlmcsd%E3%80%91%E9%83%A8%E7%BD%B2/"/>
+    <url>/2024/04/24/%E3%80%90vlmcsd%E3%80%91%E9%83%A8%E7%BD%B2/</url>
+    
+    <content type="html"><![CDATA[<h3 id="在-Debian-中部署"><a href="#在-Debian-中部署" class="headerlink" title="在 Debian 中部署"></a>在 Debian 中部署</h3><h4 id="1、首先从-Github-中下载构建好的二进制文件"><a href="#1、首先从-Github-中下载构建好的二进制文件" class="headerlink" title="1、首先从 Github 中下载构建好的二进制文件"></a>1、首先从 Github 中下载构建好的二进制文件</h4><p><a href="https://github.com/Wind4/vlmcsd">https://github.com/Wind4/vlmcsd</a></p><h4 id="2、在目录中找到适合运行环境的文件"><a href="#2、在目录中找到适合运行环境的文件" class="headerlink" title="2、在目录中找到适合运行环境的文件"></a>2、在目录中找到适合运行环境的文件</h4><div class="code-wrapper"><pre><code class="hljs moonscript">例如：\binaries\binaries\Linux\intel\static\vlmcsd-x64-musl-static</code></pre></div><h4 id="3、通过-SFTP-上传到-Debian-的目录中，再复制到合适的位置"><a href="#3、通过-SFTP-上传到-Debian-的目录中，再复制到合适的位置" class="headerlink" title="3、通过 SFTP 上传到 Debian 的目录中，再复制到合适的位置"></a>3、通过 SFTP 上传到 Debian 的目录中，再复制到合适的位置</h4><div class="code-wrapper"><pre><code class="hljs gradle">cp <span class="hljs-regexp">/temp/</span>vlmcsd-x64-musl-<span class="hljs-keyword">static</span> <span class="hljs-regexp">/mnt/</span>vlmscd/</code></pre></div><h4 id="4、给文件添加可执行权限"><a href="#4、给文件添加可执行权限" class="headerlink" title="4、给文件添加可执行权限"></a>4、给文件添加可执行权限</h4><div class="code-wrapper"><pre><code class="hljs gradle">chmod <span class="hljs-number">755</span> <span class="hljs-regexp">/mnt/</span>vlmscd/vlmcsd-x64-musl-<span class="hljs-keyword">static</span></code></pre></div><h4 id="5、创建系统服务配置"><a href="#5、创建系统服务配置" class="headerlink" title="5、创建系统服务配置"></a>5、创建系统服务配置</h4><div class="code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> 新建一个文件 vlmcsd.service[Unit]Description=kms激活服务After=network.target[Service]Type=forkingPIDFile=<span class="hljs-regexp">/var/</span>run/vlmcsd.pidExecStart=<span class="hljs-regexp">/mnt/</span>vlmcsd<span class="hljs-regexp">/vlmcsd-x64-musl-static -p /</span>var<span class="hljs-regexp">/run/</span>vlmcsd.pidExecStop=<span class="hljs-regexp">/bin/</span>kill -HUP <span class="hljs-variable">$MAINPID</span>PrivateTmp=true[Install]WantedBy=multi-user.target</code></pre></div><h4 id="6、复制文件到-systemctl-的配置文件目录下"><a href="#6、复制文件到-systemctl-的配置文件目录下" class="headerlink" title="6、复制文件到 systemctl 的配置文件目录下"></a>6、复制文件到 systemctl 的配置文件目录下</h4><div class="code-wrapper"><pre><code class="hljs awk">cp <span class="hljs-regexp">/mnt/</span>vlmcsd.service <span class="hljs-regexp">/lit/</span>systemd<span class="hljs-regexp">/system/</span></code></pre></div><h4 id="7、重新加载一下-systemctl-并启动服务"><a href="#7、重新加载一下-systemctl-并启动服务" class="headerlink" title="7、重新加载一下 systemctl,并启动服务"></a>7、重新加载一下 systemctl,并启动服务</h4><div class="code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> 重新加载systemctlsystemctl daemon-reload<span class="hljs-regexp">//</span> 启动vlmcsdsystemctl start vlmcsd.service</code></pre></div><h4 id="8、其他"><a href="#8、其他" class="headerlink" title="8、其他"></a>8、其他</h4><p>记得打开防火墙端口，默认 1688</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>kms</tag>
+      
+      <tag>windows</tag>
+      
+      <tag>linux</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
-    <link href="/2024/01/03/hello-world/"/>
-    <url>/2024/01/03/hello-world/</url>
+    <link href="/2024/04/24/hello-world/"/>
+    <url>/2024/04/24/hello-world/</url>
     
     <content type="html"><![CDATA[<div class="code-wrapper"><pre><code class="hljs ada">先前我总觉得思念二字太俗气，自从遇见了你，我才自知是个俗人<span class="hljs-comment">-- 《甲方乙方》</span></code></pre></div><div class="code-wrapper"><pre><code class="hljs ada">当你在我眼前的时候，你是一切；当你不在我眼前的时候，一切是你<span class="hljs-comment">-- 《编辑部的故事》</span></code></pre></div><div class="code-wrapper"><pre><code class="hljs ada">有几次我梦见你，你如此清晰的站在我面前，是我激动不已，一旦惊醒，心如刀绞<span class="hljs-comment">-- 《不见不散》</span></code></pre></div><div class="code-wrapper"><pre><code class="hljs ada">人生乐在相知心，我就是一把干柴<span class="hljs-comment">-- 《编辑部的故事》</span></code></pre></div><div class="code-wrapper"><pre><code class="hljs ada">我本将心向明月，奈何明月照沟渠<span class="hljs-comment">-- 《天下无贼》</span></code></pre></div>]]></content>
     

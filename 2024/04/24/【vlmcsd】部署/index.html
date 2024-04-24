@@ -16,27 +16,24 @@
   <meta name="author" content="wangyuan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="一、情况概述使用windows 11开发，在偶然的情况下会出现1888、8080、8000端口被占用，导致项目启动到别的端口号上，甚至每次启动都不一样 当这个情况出现后，可能重启一次能解决问题，可能一直重启都无法解决问题，并且使用 netstat -ano | findstr [端口号]  也无法找到占用端口的程序，但是项目无法正确的在1888上启动 二、造成这种情况的原因1、windows里有一">
+    <meta name="description" content="在 Debian 中部署1、首先从 Github 中下载构建好的二进制文件https:&#x2F;&#x2F;github.com&#x2F;Wind4&#x2F;vlmcsd 2、在目录中找到适合运行环境的文件例如：\binaries\binaries\Linux\intel\static\vlmcsd-x64-musl-static  3、通过 SFTP 上传到 Debian 的目录中，再复制到合适的位置cp &#x2F;temp&#x2F;vlmcs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开发中端口号乱跳">
-<meta property="og:url" content="http://wangyuan.online/2023/10/26/%E5%BC%80%E5%8F%91%E4%B8%AD%E7%AB%AF%E5%8F%A3%E5%8F%B7%E4%B9%B1%E8%B7%B3/index.html">
+<meta property="og:title" content="vlmcsd 部署">
+<meta property="og:url" content="http://wangyuan.online/2024/04/24/%E3%80%90vlmcsd%E3%80%91%E9%83%A8%E7%BD%B2/index.html">
 <meta property="og:site_name" content="阿源的小站">
-<meta property="og:description" content="一、情况概述使用windows 11开发，在偶然的情况下会出现1888、8080、8000端口被占用，导致项目启动到别的端口号上，甚至每次启动都不一样 当这个情况出现后，可能重启一次能解决问题，可能一直重启都无法解决问题，并且使用 netstat -ano | findstr [端口号]  也无法找到占用端口的程序，但是项目无法正确的在1888上启动 二、造成这种情况的原因1、windows里有一">
+<meta property="og:description" content="在 Debian 中部署1、首先从 Github 中下载构建好的二进制文件https:&#x2F;&#x2F;github.com&#x2F;Wind4&#x2F;vlmcsd 2、在目录中找到适合运行环境的文件例如：\binaries\binaries\Linux\intel\static\vlmcsd-x64-musl-static  3、通过 SFTP 上传到 Debian 的目录中，再复制到合适的位置cp &#x2F;temp&#x2F;vlmcs">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-26T14:46:57.000Z">
+<meta property="article:published_time" content="2024-04-24T22:36:43.000Z">
 <meta property="article:modified_time" content="2024-04-24T15:24:23.267Z">
 <meta property="article:author" content="wangyuan">
+<meta property="article:tag" content="kms">
 <meta property="article:tag" content="windows">
-<meta property="article:tag" content="vue">
-<meta property="article:tag" content="nodejs">
-<meta property="article:tag" content="react">
-<meta property="article:tag" content="vite">
-<meta property="article:tag" content="port">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>开发中端口号乱跳 - 阿源的小站</title>
+  <title>vlmcsd 部署 - 阿源的小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -178,7 +175,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">开发中端口号乱跳</span>
+            <span id="subtitle">vlmcsd 部署</span>
           
         </div>
 
@@ -189,8 +186,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-10-26 14:46" pubdate>
-          2023年10月26日 下午
+        <time datetime="2024-04-24 22:36" pubdate>
+          2024年4月24日 晚上
         </time>
       </span>
     
@@ -201,7 +198,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.3k 字
+          724 字
         
       </span>
     
@@ -212,7 +209,7 @@
         
         
         
-          11 分钟
+          7 分钟
         
       </span>
     
@@ -250,47 +247,41 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">开发中端口号乱跳</h1>
+            <h1 style="display: none">vlmcsd 部署</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="一、情况概述"><a href="#一、情况概述" class="headerlink" title="一、情况概述"></a>一、情况概述</h3><p>使用windows 11开发，在偶然的情况下会出现1888、8080、8000端口被占用，导致项目启动到别的端口号上，甚至每次启动都不一样</p>
-<p>当这个情况出现后，可能重启一次能解决问题，可能一直重启都无法解决问题，并且使用</p>
-<div class="code-wrapper"><pre><code class="hljs shell">netstat -ano | findstr [端口号]</code></pre></div>
+                <h3 id="在-Debian-中部署"><a href="#在-Debian-中部署" class="headerlink" title="在 Debian 中部署"></a>在 Debian 中部署</h3><h4 id="1、首先从-Github-中下载构建好的二进制文件"><a href="#1、首先从-Github-中下载构建好的二进制文件" class="headerlink" title="1、首先从 Github 中下载构建好的二进制文件"></a>1、首先从 Github 中下载构建好的二进制文件</h4><p><a target="_blank" rel="noopener" href="https://github.com/Wind4/vlmcsd">https://github.com/Wind4/vlmcsd</a></p>
+<h4 id="2、在目录中找到适合运行环境的文件"><a href="#2、在目录中找到适合运行环境的文件" class="headerlink" title="2、在目录中找到适合运行环境的文件"></a>2、在目录中找到适合运行环境的文件</h4><div class="code-wrapper"><pre><code class="hljs moonscript">例如：\binaries\binaries\Linux\intel\static\vlmcsd-x64-musl-static</code></pre></div>
 
-<p>也无法找到占用端口的程序，但是项目无法正确的在1888上启动</p>
-<h3 id="二、造成这种情况的原因"><a href="#二、造成这种情况的原因" class="headerlink" title="二、造成这种情况的原因"></a>二、造成这种情况的原因</h3><p>1、windows里有一个功能叫 &lt; TCP 动态端口范围 &gt;，在这个范围里的端口会被一些服务占用 </p>
-<ul>
-<li><p> Windows Vista（或 Windows Server 2008）之前，动态端口范围是 1025 到 5000</p>
-</li>
-<li><p>在 Windows Vista（或 Windows Server 2008）之后，默认起始端口为 49152，默认结束端口为 65535</p>
-</li>
-</ul>
-<p>2、如果安装了 Hyper-V，那么 Hyper-V 会为容器宿主网络服务（Windows Container Host Networking Service）随机保留一些端口号使用</p>
-<p>旧的windows为了遵守 Internet 分配号码颁发机构 (IANA) 建议，把端口从1025-5000改到了49152-65535</p>
-<p>在一些情况下windows自动更新会把起始端口号设置为1025，那么1888、8000等端口就不能使用了，所以会出现项目启动端口乱跳</p>
-<h3 id="三、解决方案"><a href="#三、解决方案" class="headerlink" title="三、解决方案"></a>三、解决方案</h3><p>使用：</p>
-<div class="code-wrapper"><pre><code class="hljs powershell">netsh init ipv4 show dynamicport tcp</code></pre></div>
+<h4 id="3、通过-SFTP-上传到-Debian-的目录中，再复制到合适的位置"><a href="#3、通过-SFTP-上传到-Debian-的目录中，再复制到合适的位置" class="headerlink" title="3、通过 SFTP 上传到 Debian 的目录中，再复制到合适的位置"></a>3、通过 SFTP 上传到 Debian 的目录中，再复制到合适的位置</h4><div class="code-wrapper"><pre><code class="hljs gradle">cp <span class="hljs-regexp">/temp/</span>vlmcsd-x64-musl-<span class="hljs-keyword">static</span> <span class="hljs-regexp">/mnt/</span>vlmscd/</code></pre></div>
 
-<p>可以查看当前系统中为&lt; TCP 动态端口&gt;分配的端口范围</p>
-<p>使用：</p>
-<div class="code-wrapper"><pre><code class="hljs powershell">netsh int ipv4 show excludedportrange protocol=tcp</code></pre></div>
+<h4 id="4、给文件添加可执行权限"><a href="#4、给文件添加可执行权限" class="headerlink" title="4、给文件添加可执行权限"></a>4、给文件添加可执行权限</h4><div class="code-wrapper"><pre><code class="hljs gradle">chmod <span class="hljs-number">755</span> <span class="hljs-regexp">/mnt/</span>vlmscd/vlmcsd-x64-musl-<span class="hljs-keyword">static</span></code></pre></div>
 
-<p>可以查看被征用的端口范围，如果发现要使用的端口在这个范围内，则会出现端口号乱跑的情况</p>
-<p>1、解决方案：排除指定的端口，让系统不占用指定的端口</p>
-<div class="code-wrapper"><pre><code class="hljs powershell">netsh int ipv4 add excludedportrange  protocol=tcp startport=<span class="hljs-number">1888</span> numberofports=<span class="hljs-number">10</span>
-<span class="hljs-comment"># 这里1888为开始的端口，10的意思为1888 - 1898 这10个端口全都要移出保留端口，如果只想8081不作为端口，那么10可以改成1</span></code></pre></div>
+<h4 id="5、创建系统服务配置"><a href="#5、创建系统服务配置" class="headerlink" title="5、创建系统服务配置"></a>5、创建系统服务配置</h4><div class="code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> 新建一个文件 vlmcsd.service
+[Unit]
+Description=kms激活服务
+After=network.target
+[Service]
+Type=forking
+PIDFile=<span class="hljs-regexp">/var/</span>run/vlmcsd.pid
+ExecStart=<span class="hljs-regexp">/mnt/</span>vlmcsd<span class="hljs-regexp">/vlmcsd-x64-musl-static -p /</span>var<span class="hljs-regexp">/run/</span>vlmcsd.pid
+ExecStop=<span class="hljs-regexp">/bin/</span>kill -HUP <span class="hljs-variable">$MAINPID</span>
+PrivateTmp=true
+[Install]
+WantedBy=multi-user.target</code></pre></div>
 
-<p>2、修改&lt; TCP动态端口&gt;的范围，把常用的端口划出去，或者划分不常用的端口留给系统使用</p>
-<div class="code-wrapper"><pre><code class="hljs powershell">netsh int ipv4 <span class="hljs-built_in">set</span> dynamic tcp <span class="hljs-built_in">start</span>=<span class="hljs-number">49152</span> num=<span class="hljs-number">16384</span>
-netsh int ipv6 <span class="hljs-built_in">set</span> dynamic tcp <span class="hljs-built_in">start</span>=<span class="hljs-number">49152</span> num=<span class="hljs-number">16384</span>
-<span class="hljs-comment"># 从49152开始的16384个端口，也就是49152-65535，提供给&lt;TCP动态端口&gt;服务</span></code></pre></div>
+<h4 id="6、复制文件到-systemctl-的配置文件目录下"><a href="#6、复制文件到-systemctl-的配置文件目录下" class="headerlink" title="6、复制文件到 systemctl 的配置文件目录下"></a>6、复制文件到 systemctl 的配置文件目录下</h4><div class="code-wrapper"><pre><code class="hljs awk">cp <span class="hljs-regexp">/mnt/</span>vlmcsd.service <span class="hljs-regexp">/lit/</span>systemd<span class="hljs-regexp">/system/</span></code></pre></div>
 
-<p>3、重启电脑，就可以正常使用端口了</p>
-<h3 id="四、参考"><a href="#四、参考" class="headerlink" title="四、参考"></a>四、参考</h3><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-cn/troubleshoot/windows-server/networking/reserve-a-range-of-ephemeral-ports">保留一系列临时端口 - Windows Server | Microsoft Learn</a></p>
-<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/zh-CN/troubleshoot/windows-server/networking/default-dynamic-port-range-tcpip-chang">Windows Vista 和 Windows Server 2008 中 TCP&#x2F;IP 的默认动态端口范围已更改 - Windows Server | Microsoft Learn</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weter_drop/article/details/129786201">一文解决windows电脑端口被占用问题，专治疑难杂症和port xxxx was already in use 说再见_windows端口被占用怎么解决_T-OPEN的博客-CSDN博客</a></p>
+<h4 id="7、重新加载一下-systemctl-并启动服务"><a href="#7、重新加载一下-systemctl-并启动服务" class="headerlink" title="7、重新加载一下 systemctl,并启动服务"></a>7、重新加载一下 systemctl,并启动服务</h4><div class="code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> 重新加载systemctl
+systemctl daemon-reload
+
+<span class="hljs-regexp">//</span> 启动vlmcsd
+
+systemctl start vlmcsd.service</code></pre></div>
+
+<h4 id="8、其他"><a href="#8、其他" class="headerlink" title="8、其他"></a>8、其他</h4><p>记得打开防火墙端口，默认 1688</p>
 
                 
               </div>
@@ -303,17 +294,11 @@ netsh int ipv6 <span class="hljs-built_in">set</span> dynamic tcp <span class="h
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
+        <a href="/tags/kms/">#kms</a>
+      
         <a href="/tags/windows/">#windows</a>
       
-        <a href="/tags/vue/">#vue</a>
-      
-        <a href="/tags/nodejs/">#nodejs</a>
-      
-        <a href="/tags/react/">#react</a>
-      
-        <a href="/tags/vite/">#vite</a>
-      
-        <a href="/tags/port/">#port</a>
+        <a href="/tags/linux/">#linux</a>
       
     </div>
   
@@ -327,18 +312,12 @@ netsh int ipv6 <span class="hljs-built_in">set</span> dynamic tcp <span class="h
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/04/24/hello-world/" title="Hello World">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Hello World</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/10/12/sheetjs%E5%AF%BC%E5%85%A5%E5%92%8C%E5%AF%BC%E5%87%BA/" title="sheetjs导入和导出">
-                        <span class="hidden-mobile">sheetjs导入和导出</span>
+                      <a href="/2024/04/24/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
