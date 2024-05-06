@@ -24,7 +24,7 @@
 <meta property="og:description" content="一、引入 xlsx 包import &amp;#123; utils, writeFile, read &amp;#125; from &quot;xlsx&quot;;  二、读取一个文件1、通过传统的方式读取文件兼容性比较好的方式，创建一个 type 为 file 的元素然后点击它 const inputDom &#x3D; document.createElement(&quot;input&quot;); inpu">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-12T22:06:13.000Z">
-<meta property="article:modified_time" content="2024-04-24T15:24:23.267Z">
+<meta property="article:modified_time" content="2024-05-06T07:20:03.933Z">
 <meta property="article:author" content="wangyuan">
 <meta property="article:tag" content="sheetjs">
 <meta property="article:tag" content="xlsx">
@@ -313,7 +313,7 @@ inputDom.<span class="hljs-title function_">click</span>();</code></pre></div>
   &#125;,
 ];</code></pre></div>
 
-<p>在 sheet 中默认会使用对象的 key 做表格的表头，整理成这种数据可以更值观</p>
+<p>在 sheet 中默认会使用对象的 key 做表格的表头，整理成这种数据可以更直观</p>
 <div class="code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">const</span> data = [&#123; xxxx &#125;];
 <span class="hljs-keyword">const</span> ws = utils.<span class="hljs-title function_">json_to_sheet</span>(data);
 <span class="hljs-keyword">const</span> wb = utils.<span class="hljs-title function_">book_new</span>();

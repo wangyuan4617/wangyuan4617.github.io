@@ -200,6 +200,39 @@
     <article class="col-12 col-md-12 mx-auto index-info">
       <h1 class="index-header">
         
+        <a href="/2024/05/06/hello-world/" target="_self">
+          Hello World
+        </a>
+      </h1>
+
+      
+      <a class="index-excerpt index-excerpt__noimg" href="/2024/05/06/hello-world/" target="_self">
+        <div>
+          先前我总觉得思念二字太俗气，自从遇见了你，我才自知是个俗人 -- 《甲方乙方》  当你在我眼前的时候，你是一切；当你不在我眼前的时候，一切是你 -- 《编辑部的故事》  有几次我梦见你，你如此清晰的站在我面前，是我激动不已，一旦惊醒，心如刀绞 -- 《不见不散》  人生乐在相知心，我就是一把干柴 -- 《编辑部的故事》  我本将心向明月，奈何明月照沟渠 -- 《天下无贼》
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2024-05-06 07:20" pubdate>
+              2024-05-06
+            </time>
+          </div>
+        
+        
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
         <a href="/2024/04/24/%E3%80%90vlmcsd%E3%80%91%E9%83%A8%E7%BD%B2/" target="_self">
           vlmcsd 部署
         </a>
@@ -233,39 +266,6 @@
               <a href="/tags/linux/">#linux</a>
             
           </div>
-        
-      </div>
-    </article>
-  </div>
-
-  <div class="row mx-auto index-card">
-    
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2024/04/24/hello-world/" target="_self">
-          Hello World
-        </a>
-      </h1>
-
-      
-      <a class="index-excerpt index-excerpt__noimg" href="/2024/04/24/hello-world/" target="_self">
-        <div>
-          先前我总觉得思念二字太俗气，自从遇见了你，我才自知是个俗人 -- 《甲方乙方》  当你在我眼前的时候，你是一切；当你不在我眼前的时候，一切是你 -- 《编辑部的故事》  有几次我梦见你，你如此清晰的站在我面前，是我激动不已，一旦惊醒，心如刀绞 -- 《不见不散》  人生乐在相知心，我就是一把干柴 -- 《编辑部的故事》  我本将心向明月，奈何明月照沟渠 -- 《天下无贼》
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2024-04-24 15:24" pubdate>
-              2024-04-24
-            </time>
-          </div>
-        
-        
         
       </div>
     </article>
@@ -630,7 +630,37 @@
       }
       var text = subtitle.getAttribute('data-typed-text');
       
-        typing(text);
+        jQuery.ajax({
+          type: 'GET',
+          url: 'https://v1.jinrishici.com/shuqing/aiqing',
+          headers: {},
+          dataType: 'json',
+          success: function(result) {
+            var apiText;
+            if (result) {
+              var keys = 'content'.split(',');
+              if (result instanceof Array) {
+                result = result[0];
+              }
+              for (const k of keys) {
+                var value = result[k];
+                if (typeof value === 'string') {
+                  apiText = value;
+                  break;
+                } else if (value instanceof Object) {
+                  result = value;
+                }
+              }
+            }
+            apiText ? typing(apiText) : typing(text);
+          },
+          error: function(xhr, status, error) {
+            if (error) {
+              console.error('Failed to request https://v1.jinrishici.com/shuqing/aiqing:', error);
+            }
+            typing(text);
+          }
+        })
       
     })(window, document);
   </script>
