@@ -99,7 +99,7 @@ saveAs(new Blob([wbout], { type: "application/octet-stream" }), "文件名.xlsx"
 ];
 ```
 
-在 sheet 中默认会使用对象的 key 做表格的表头，整理成这种数据可以更值观
+在 sheet 中默认会使用对象的 key 做表格的表头，整理成这种数据可以更直观
 
 ```js
 const data = [{ xxxx }];
