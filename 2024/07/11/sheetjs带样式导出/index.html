@@ -16,26 +16,23 @@
   <meta name="author" content="wangyuan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言先看一个效果   很简单，通过鼠标移入方向的不同做一些操作，在这个例子中只讨论实现判断鼠标移入方向的方式 思考 例如在这个蓝色方框中，通过对角线分割四个单独的三角形，我们在三角形的焦点建立一个坐标系，在这个方框中对于当前坐标系来说，我们只要计算出来方框中某一个点在坐标系中的位置到原点的连接线相对于 x 轴正轴方向的角度就可以判断出点在方框中的位置。 代码&#x2F;&#x2F;  获取元素 const conta">
+    <meta name="description" content="一、引入需要的包在 sheetjs 中只能导出默认不带样式的表格，如果需要表格宽度、字体颜色、单元格背景颜色等，需要引入另外的包 npm install xlsx-js-style  二、使用使用 xlsx-js-style 和 sheetjs 的形式相差不大，需要从 xlsx 中导出 写文件的方法 import &amp;#123; utils, writeFile &amp;#125; from &quot;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="鼠标移入方向的解决方式">
-<meta property="og:url" content="http://wangyuan.online/2023/03/12/%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%85%A5%E6%96%B9%E5%90%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:title" content="sheetjs带样式导出">
+<meta property="og:url" content="http://wangyuan.online/2024/07/11/sheetjs%E5%B8%A6%E6%A0%B7%E5%BC%8F%E5%AF%BC%E5%87%BA/index.html">
 <meta property="og:site_name" content="阿源的小站">
-<meta property="og:description" content="前言先看一个效果   很简单，通过鼠标移入方向的不同做一些操作，在这个例子中只讨论实现判断鼠标移入方向的方式 思考 例如在这个蓝色方框中，通过对角线分割四个单独的三角形，我们在三角形的焦点建立一个坐标系，在这个方框中对于当前坐标系来说，我们只要计算出来方框中某一个点在坐标系中的位置到原点的连接线相对于 x 轴正轴方向的角度就可以判断出点在方框中的位置。 代码&#x2F;&#x2F;  获取元素 const conta">
+<meta property="og:description" content="一、引入需要的包在 sheetjs 中只能导出默认不带样式的表格，如果需要表格宽度、字体颜色、单元格背景颜色等，需要引入另外的包 npm install xlsx-js-style  二、使用使用 xlsx-js-style 和 sheetjs 的形式相差不大，需要从 xlsx 中导出 写文件的方法 import &amp;#123; utils, writeFile &amp;#125; from &quot;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://oss.wangyuan.cool/blog/screenshots.gif">
-<meta property="og:image" content="https://oss.wangyuan.cool/blog/zhuobiaoxi.jpg">
-<meta property="article:published_time" content="2023-03-12T18:26:56.000Z">
+<meta property="article:published_time" content="2024-07-11T14:23:04.000Z">
 <meta property="article:modified_time" content="2024-07-11T07:47:18.651Z">
 <meta property="article:author" content="wangyuan">
-<meta property="article:tag" content="js">
-<meta property="article:tag" content="animation">
+<meta property="article:tag" content="sheetjs">
+<meta property="article:tag" content="xlsx">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://oss.wangyuan.cool/blog/screenshots.gif">
   
   
   
-  <title>鼠标移入方向的解决方式 - 阿源的小站</title>
+  <title>sheetjs带样式导出 - 阿源的小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -177,7 +174,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">鼠标移入方向的解决方式</span>
+            <span id="subtitle">sheetjs带样式导出</span>
           
         </div>
 
@@ -188,8 +185,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-12 18:26" pubdate>
-          2023年3月12日 晚上
+        <time datetime="2024-07-11 14:23" pubdate>
+          2024年7月11日 下午
         </time>
       </span>
     
@@ -200,7 +197,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          748 字
         
       </span>
     
@@ -211,7 +208,7 @@
         
         
         
-          11 分钟
+          7 分钟
         
       </span>
     
@@ -249,49 +246,46 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">鼠标移入方向的解决方式</h1>
+            <h1 style="display: none">sheetjs带样式导出</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>先看一个效果 <br> <img src="https://oss.wangyuan.cool/blog/screenshots.gif" srcset="/img/loading.gif" lazyload alt="效果展示"> <br>很简单，通过鼠标移入方向的不同做一些操作，在这个例子中只讨论实现判断鼠标移入方向的方式</p>
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p><img src="https://oss.wangyuan.cool/blog/zhuobiaoxi.jpg" srcset="/img/loading.gif" lazyload alt="坐标系"> <br>例如在这个蓝色方框中，通过对角线分割四个单独的三角形，我们在三角形的焦点建立一个坐标系，在这个方框中对于当前坐标系来说，我们只要计算出来方框中某一个点在坐标系中的位置到原点的连接线相对于 x 轴正轴方向的角度就可以判断出点在方框中的位置。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><div class="code-wrapper"><pre><code class="hljs arduino"><span class="hljs-comment">//  获取元素</span>
-<span class="hljs-type">const</span> container = <span class="hljs-built_in">ref</span>();
-<span class="hljs-type">const</span> mainFun = () =&gt; &#123;
-  <span class="hljs-comment">//得到指定元素的宽高数据</span>
-  let rect = container.value.<span class="hljs-built_in">getBoundingClientRect</span>();
-  <span class="hljs-comment">//通过元素的宽和高计算出∠θ的反正切，也就是计算出右侧三角形的分界弧度</span>
-  <span class="hljs-type">const</span> theta = Math.<span class="hljs-built_in">atan</span>(rect.height / rect.width);
-  <span class="hljs-comment">//给元素添加鼠标移入时间</span>
-  container.value.<span class="hljs-built_in">addEventListener</span>(<span class="hljs-string">&quot;mouseenter&quot;</span>, (e) =&gt; &#123;
-    <span class="hljs-comment">// 得到鼠标移入时在坐标系中对应的x轴的值</span>
-    <span class="hljs-type">const</span> x = e.offsetX - rect.width / <span class="hljs-number">2</span>;
-    <span class="hljs-comment">// 得到鼠标移入时在坐标系中对应的y轴的值</span>
-    <span class="hljs-type">const</span> y = rect.height / <span class="hljs-number">2</span> - e.offsetY;
-    <span class="hljs-comment">// math.atan2是js提供的方法，返回正x轴到从(0,0)点到(x,y)点之间的平面角度，计算出鼠标移入时的坐标点到x正轴的角度，</span>
-    <span class="hljs-type">const</span> d = Math.<span class="hljs-built_in">atan2</span>(y, x);
-    let dire;
-    <span class="hljs-comment">// 通过角度判断是从哪个方向移入的</span>
-    <span class="hljs-keyword">if</span> (d &lt; theta &amp;&amp; d &gt;= -theta) &#123;
-      dire = <span class="hljs-string">&quot;right&quot;</span>;
-    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (d &gt;= theta &amp;&amp; d &lt; Math.PI - theta) &#123;
-      dire = <span class="hljs-string">&quot;up&quot;</span>;
-    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (d &lt; -theta &amp;&amp; d &gt;= theta - Math.PI) &#123;
-      dire = <span class="hljs-string">&quot;down&quot;</span>;
-    &#125; <span class="hljs-keyword">else</span> &#123;
-      dire = <span class="hljs-string">&quot;left&quot;</span>;
-    &#125;
-    <span class="hljs-comment">//通过添加类名改变元素的动画效果和移入效果</span>
-    container.value.classList.<span class="hljs-built_in">add</span>(dire);
-  &#125;);
-  <span class="hljs-comment">//移出鼠标时还原类名</span>
-  container.value.<span class="hljs-built_in">addEventListener</span>(<span class="hljs-string">&quot;mouseleave&quot;</span>, () =&gt; &#123;
-    container.value.className = <span class="hljs-string">&quot;mouse-entry-direction-body&quot;</span>;
-  &#125;);
-&#125;;</code></pre></div>
+                <h3 id="一、引入需要的包"><a href="#一、引入需要的包" class="headerlink" title="一、引入需要的包"></a>一、引入需要的包</h3><p>在 sheetjs 中只能导出默认不带样式的表格，如果需要表格宽度、字体颜色、单元格背景颜色等，需要引入另外的包</p>
+<div class="code-wrapper"><pre><code class="hljs js">npm install xlsx-js-style</code></pre></div>
 
-<h3 id="over"><a href="#over" class="headerlink" title="over"></a>over</h3><p>通过在 container 上覆盖三角元素的方法也可以解决这个问题，但是会增加不必要的 html 元素，并且如果需要在元素中有更多操作时更复杂。</p>
+<h3 id="二、使用"><a href="#二、使用" class="headerlink" title="二、使用"></a>二、使用</h3><p>使用 xlsx-js-style 和 sheetjs 的形式相差不大，需要从 xlsx 中导出 写文件的方法</p>
+<div class="code-wrapper"><pre><code class="hljs js"><span class="hljs-keyword">import</span> &#123; utils, writeFile &#125; <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;xlsx-js-style&quot;</span>;</code></pre></div>
+
+<p>使用时需要把每个单元格都看一个对象，这个对象包含单元格的数据和样式</p>
+<div class="code-wrapper"><pre><code class="hljs js">&#123;
+    <span class="hljs-attr">v</span>: <span class="hljs-string">&quot;数据&quot;</span>,<span class="hljs-comment">// v-&gt;value</span>
+    <span class="hljs-attr">t</span>: <span class="hljs-string">&quot;s&quot;</span>,<span class="hljs-comment">// t-&gt;type 数据类型</span>
+    <span class="hljs-attr">s</span>: &#123; <span class="hljs-comment">//s-&gt;style</span>
+        <span class="hljs-attr">font</span>: &#123; <span class="hljs-comment">//字体相关设置</span>
+            <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;微软雅黑&quot;</span>,<span class="hljs-comment">//字体</span>
+            <span class="hljs-attr">sz</span>: <span class="hljs-number">12</span>,<span class="hljs-comment">//字体大小</span>
+            <span class="hljs-attr">bold</span>: <span class="hljs-literal">true</span>,<span class="hljs-comment">//是否粗体</span>
+        &#125;,
+        <span class="hljs-attr">border</span>:&#123;<span class="hljs-comment">// 单元格边框相关</span>
+        <span class="hljs-attr">top</span>:&#123;<span class="hljs-comment">// 上边框</span>
+            <span class="hljs-attr">style</span>: <span class="hljs-string">&quot;thin&quot;</span>,<span class="hljs-comment">// 细线</span>
+            <span class="hljs-attr">color</span>: <span class="hljs-string">&#x27;#000000&#x27;</span>
+        &#125;,
+        <span class="hljs-attr">bottom</span>:&#123;...&#125;,<span class="hljs-comment">// 下边框</span>
+        <span class="hljs-attr">left</span>:&#123;...&#125;,<span class="hljs-comment">// 左边框</span>
+        <span class="hljs-attr">right</span>:&#123;...&#125;<span class="hljs-comment">// 右边框</span>
+    &#125;,
+    <span class="hljs-attr">fill</span>:&#123;<span class="hljs-comment">//单元格背景颜色，在excel中叫 填充所以叫fill(猜的)</span>
+    <span class="hljs-attr">fgColor</span>:&#123;<span class="hljs-comment">//背景颜色</span>
+    <span class="hljs-attr">rgb</span>:<span class="hljs-string">&#x27;#FFFFFF&#x27;</span>
+    &#125;
+&#125;
+&#125;
+&#125;</code></pre></div>
+
+<p>更多参数可以查看 sheetjs 的<a target="_blank" rel="noopener" href="https://docs.sheetjs.com/docs/csf/cell">单元格类型文档</a></p>
+<p>xlsx-js-style 的 npm 地址<a target="_blank" rel="noopener" href="https://www.npmjs.com/package/xlsx-js-style">xlsx-js-style</a></p>
 
                 
               </div>
@@ -304,9 +298,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/js/">#js</a>
+        <a href="/tags/sheetjs/">#sheetjs</a>
       
-        <a href="/tags/animation/">#animation</a>
+        <a href="/tags/xlsx/">#xlsx</a>
       
     </div>
   
@@ -320,9 +314,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/09/amd%E6%98%BE%E5%8D%A1%E5%85%89%E6%A0%87%E5%8F%98%E7%99%BD/" title="amd显卡光标变白">
+                      <a href="/2024/07/11/%E7%BA%AFcss%E5%BC%B9%E7%AA%97%E5%A4%84%E7%90%86/" title="纯css弹窗处理">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">amd显卡光标变白</span>
+                        <span class="hidden-mobile">纯css弹窗处理</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -330,8 +324,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/25/BEM%E5%91%BD%E5%90%8D%E7%AE%A1%E7%90%86%E6%A0%B7%E5%BC%8F/" title="BEM命名管理样式">
-                        <span class="hidden-mobile">BEM命名管理样式</span>
+                      <a href="/2024/07/11/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

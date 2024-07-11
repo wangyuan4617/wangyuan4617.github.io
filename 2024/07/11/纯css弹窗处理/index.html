@@ -16,21 +16,22 @@
   <meta name="author" content="wangyuan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="先前我总觉得思念二字太俗气，自从遇见了你，我才自知是个俗人 -- 《甲方乙方》  当你在我眼前的时候，你是一切；当你不在我眼前的时候，一切是你 -- 《编辑部的故事》  有几次我梦见你，你如此清晰的站在我面前，是我激动不已，一旦惊醒，心如刀绞 -- 《不见不散》  人生乐在相知心，我就是一把干柴 -- 《编辑部的故事》  我本将心向明月，奈何明月照沟渠 -- 《天下无贼》">
+    <meta name="description" content="一、使用情况最开始是要做一个高德地图展示，需要在多个 market 上展示弹窗，但是高德地图的 infoWindow 同时只能存在一个，所以需要自己写 market 的逻辑 可以直接使用react-amap这个包给market传入组件就不需要考虑这个问题  二、实现思路1、利用 type 为 checkbox 的 input 标签的选中和非选中实现两种状态2、 css 中的选择器实现 style">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://wangyuan.online/2024/05/06/hello-world/index.html">
+<meta property="og:title" content="纯css弹窗处理">
+<meta property="og:url" content="http://wangyuan.online/2024/07/11/%E7%BA%AFcss%E5%BC%B9%E7%AA%97%E5%A4%84%E7%90%86/index.html">
 <meta property="og:site_name" content="阿源的小站">
-<meta property="og:description" content="先前我总觉得思念二字太俗气，自从遇见了你，我才自知是个俗人 -- 《甲方乙方》  当你在我眼前的时候，你是一切；当你不在我眼前的时候，一切是你 -- 《编辑部的故事》  有几次我梦见你，你如此清晰的站在我面前，是我激动不已，一旦惊醒，心如刀绞 -- 《不见不散》  人生乐在相知心，我就是一把干柴 -- 《编辑部的故事》  我本将心向明月，奈何明月照沟渠 -- 《天下无贼》">
+<meta property="og:description" content="一、使用情况最开始是要做一个高德地图展示，需要在多个 market 上展示弹窗，但是高德地图的 infoWindow 同时只能存在一个，所以需要自己写 market 的逻辑 可以直接使用react-amap这个包给market传入组件就不需要考虑这个问题  二、实现思路1、利用 type 为 checkbox 的 input 标签的选中和非选中实现两种状态2、 css 中的选择器实现 style">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-05-06T07:20:03.933Z">
-<meta property="article:modified_time" content="2024-05-06T07:20:03.933Z">
+<meta property="article:published_time" content="2024-07-11T14:38:46.000Z">
+<meta property="article:modified_time" content="2024-07-11T07:47:18.651Z">
 <meta property="article:author" content="wangyuan">
+<meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>Hello World - 阿源的小站</title>
+  <title>纯css弹窗处理 - 阿源的小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -172,7 +173,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Hello World</span>
+            <span id="subtitle">纯css弹窗处理</span>
           
         </div>
 
@@ -183,8 +184,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-05-06 07:20" pubdate>
-          2024年5月6日 早上
+        <time datetime="2024-07-11 14:38" pubdate>
+          2024年7月11日 下午
         </time>
       </span>
     
@@ -195,7 +196,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          169 字
+          1.4k 字
         
       </span>
     
@@ -206,7 +207,7 @@
         
         
         
-          2 分钟
+          12 分钟
         
       </span>
     
@@ -244,25 +245,68 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">纯css弹窗处理</h1>
             
             
               <div class="markdown-body">
                 
-                <div class="code-wrapper"><pre><code class="hljs ada">先前我总觉得思念二字太俗气，自从遇见了你，我才自知是个俗人
-<span class="hljs-comment">-- 《甲方乙方》</span></code></pre></div>
+                <h3 id="一、使用情况"><a href="#一、使用情况" class="headerlink" title="一、使用情况"></a>一、使用情况</h3><p>最开始是要做一个高德地图展示，需要在多个 market 上展示弹窗，但是高德地图的 infoWindow 同时只能存在一个，所以需要自己写 market 的逻辑</p>
+<div class="code-wrapper"><pre><code class="hljs">可以直接使用react-amap这个包给market传入组件就不需要考虑这个问题</code></pre></div>
 
-<div class="code-wrapper"><pre><code class="hljs ada">当你在我眼前的时候，你是一切；当你不在我眼前的时候，一切是你
-<span class="hljs-comment">-- 《编辑部的故事》</span></code></pre></div>
+<h3 id="二、实现思路"><a href="#二、实现思路" class="headerlink" title="二、实现思路"></a>二、实现思路</h3><p>1、利用 type 为 checkbox 的 input 标签的选中和非选中实现两种状态<br>2、 css 中的选择器实现 style 的改变，通过切换 display 的状态来展示弹窗</p>
+<div class="code-wrapper"><pre><code class="hljs html"><span class="hljs-comment">&lt;!-- 省去了一些样式 --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;marker&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;inputId&quot;</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--此svg是一个带波纹动画的圆圈--&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">svg</span></span>
+<span class="hljs-tag">      <span class="hljs-attr">width</span>=<span class="hljs-string">&quot;20&quot;</span></span>
+<span class="hljs-tag">      <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;20&quot;</span></span>
+<span class="hljs-tag">      <span class="hljs-attr">viewBox</span>=<span class="hljs-string">&quot;0 0 40 40&quot;</span></span>
+<span class="hljs-tag">      <span class="hljs-attr">xmlns</span>=<span class="hljs-string">&quot;http://www.w3.org/2000/svg&quot;</span></span>
+<span class="hljs-tag">    &gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">&quot;20&quot;</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">&quot;20&quot;</span> <span class="hljs-attr">r</span>=<span class="hljs-string">&quot;10&quot;</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;red&quot;</span> /&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">circle</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;circle&quot;</span> <span class="hljs-attr">cx</span>=<span class="hljs-string">&quot;20&quot;</span> <span class="hljs-attr">cy</span>=<span class="hljs-string">&quot;20&quot;</span> <span class="hljs-attr">r</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">fill</span>=<span class="hljs-string">&quot;red&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">animate</span></span>
+<span class="hljs-tag">          <span class="hljs-attr">attributeName</span>=<span class="hljs-string">&quot;r&quot;</span></span>
+<span class="hljs-tag">          <span class="hljs-attr">from</span>=<span class="hljs-string">&quot;0&quot;</span></span>
+<span class="hljs-tag">          <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;20&quot;</span></span>
+<span class="hljs-tag">          <span class="hljs-attr">dur</span>=<span class="hljs-string">&quot;1s&quot;</span></span>
+<span class="hljs-tag">          <span class="hljs-attr">repeatCount</span>=<span class="hljs-string">&quot;indefinite&quot;</span></span>
+<span class="hljs-tag">        /&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">animate</span></span>
+<span class="hljs-tag">          <span class="hljs-attr">attributeName</span>=<span class="hljs-string">&quot;opacity&quot;</span></span>
+<span class="hljs-tag">          <span class="hljs-attr">from</span>=<span class="hljs-string">&quot;1&quot;</span></span>
+<span class="hljs-tag">          <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;0.1&quot;</span></span>
+<span class="hljs-tag">          <span class="hljs-attr">dur</span>=<span class="hljs-string">&quot;1s&quot;</span></span>
+<span class="hljs-tag">          <span class="hljs-attr">repeatCount</span>=<span class="hljs-string">&quot;indefinite&quot;</span></span>
+<span class="hljs-tag">        /&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">circle</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">svg</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;check_input&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;inputId&quot;</span> /&gt;</span>
+  <span class="hljs-comment">&lt;!--此div必须要和input相邻--&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;infoWindow&quot;</span>&gt;</span>
+    <span class="hljs-comment">&lt;!--在这里写悬浮窗中的内容--&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre></div>
 
-<div class="code-wrapper"><pre><code class="hljs ada">有几次我梦见你，你如此清晰的站在我面前，是我激动不已，一旦惊醒，心如刀绞
-<span class="hljs-comment">-- 《不见不散》</span></code></pre></div>
+<div class="code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-class">.marker</span> &#123;
+  <span class="hljs-attribute">position</span>: relative;
+  <span class="hljs-comment">/*设置宽高颜色等 */</span>
+&#125;
+<span class="hljs-selector-class">.infoWindow</span> &#123;
+  <span class="hljs-comment">/*设置窗口的样式*/</span>
+  <span class="hljs-attribute">position</span>: absolute;
+  <span class="hljs-attribute">display</span>: none;
+&#125;
 
-<div class="code-wrapper"><pre><code class="hljs ada">人生乐在相知心，我就是一把干柴
-<span class="hljs-comment">-- 《编辑部的故事》</span></code></pre></div>
+<span class="hljs-comment">/**重点 通过选择器实现切换显示隐藏*/</span>
+<span class="hljs-selector-class">.check_input</span><span class="hljs-selector-attr">[type=<span class="hljs-string">&quot;checkbox&quot;</span>]</span><span class="hljs-selector-pseudo">:checked</span> + <span class="hljs-selector-class">.infoWindow</span> &#123;
+  <span class="hljs-attribute">display</span>: block;
+&#125;</code></pre></div>
 
-<div class="code-wrapper"><pre><code class="hljs ada">我本将心向明月，奈何明月照沟渠
-<span class="hljs-comment">-- 《天下无贼》</span></code></pre></div>
+<h3 id="三、其他"><a href="#三、其他" class="headerlink" title="三、其他"></a>三、其他</h3><p>原生 html 写起来挺麻烦的，但是是一种解题思路，想要简单的实现方式还是需要用第三方包，</p>
+<p><a target="_blank" rel="noopener" href="https://codepen.io/wangyuan4617/pen/rNgOWza">codePen 在线看效果</a></p>
 
                 
               </div>
@@ -271,6 +315,13 @@
             <div>
               <div class="post-metas my-3">
   
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/css/">#css</a>
+      
+    </div>
   
 </div>
 
@@ -286,8 +337,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/04/24/%E3%80%90vlmcsd%E3%80%91%E9%83%A8%E7%BD%B2/" title="vlmcsd 部署">
-                        <span class="hidden-mobile">vlmcsd 部署</span>
+                      <a href="/2024/07/11/sheetjs%E5%B8%A6%E6%A0%B7%E5%BC%8F%E5%AF%BC%E5%87%BA/" title="sheetjs带样式导出">
+                        <span class="hidden-mobile">sheetjs带样式导出</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
