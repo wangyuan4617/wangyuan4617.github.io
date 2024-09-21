@@ -32,7 +32,7 @@ inputDom.click();
 
 ```js
 const fileList = await window.showOpenFilePicker(); //默认会返回一个list
-const file = await files[0].getFile(); //单选文件所以选择第一个
+const file = await fileList[0].getFile(); //单选文件所以选择第一个
 const arrB = await file.ArrayBuffer(); //sheetjs支持arrayBuffer格式的数据
 const workbook = read(arrB); //调用sheetjs的read方法，读取数据
 const worksheet = workbook.Sheets[workbook.SheetNames[0]]; //获取到第一张表的数据
