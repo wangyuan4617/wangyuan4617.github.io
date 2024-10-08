@@ -16,21 +16,26 @@
   <meta name="author" content="wangyuan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="先前我总觉得思念二字太俗气，自从遇见了你，我才自知是个俗人 -- 《甲方乙方》  当你在我眼前的时候，你是一切；当你不在我眼前的时候，一切是你 -- 《编辑部的故事》  有几次我梦见你，你如此清晰的站在我面前，是我激动不已，一旦惊醒，心如刀绞 -- 《不见不散》  人生乐在相知心，我就是一把干柴 -- 《编辑部的故事》  我本将心向明月，奈何明月照沟渠 -- 《天下无贼》  万物与我都是荒诞的静寂">
+    <meta name="description" content="一、先看效果 二、实现思路1、复制一层文字放在实际文字上2、通过控制上层文字的背景颜色的 渐变属性的百分比 实现文字逐渐展示的视觉效果   三、代码示例1、html部分 &lt;div class&#x3D;&quot;body&quot;&gt;     &lt;div class&#x3D;&amp;#x27;box&amp;#x27;&gt;         &lt;p&gt;             React是用于构建用户">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="https://wangyuan.online/2024/09/21/hello-world/index.html">
+<meta property="og:title" content="文字逐行显示">
+<meta property="og:url" content="https://wangyuan.online/2024/10/08/%E6%96%87%E5%AD%97%E9%80%90%E8%A1%8C%E6%98%BE%E7%A4%BA/index.html">
 <meta property="og:site_name" content="阿源的小站">
-<meta property="og:description" content="先前我总觉得思念二字太俗气，自从遇见了你，我才自知是个俗人 -- 《甲方乙方》  当你在我眼前的时候，你是一切；当你不在我眼前的时候，一切是你 -- 《编辑部的故事》  有几次我梦见你，你如此清晰的站在我面前，是我激动不已，一旦惊醒，心如刀绞 -- 《不见不散》  人生乐在相知心，我就是一把干柴 -- 《编辑部的故事》  我本将心向明月，奈何明月照沟渠 -- 《天下无贼》  万物与我都是荒诞的静寂">
+<meta property="og:description" content="一、先看效果 二、实现思路1、复制一层文字放在实际文字上2、通过控制上层文字的背景颜色的 渐变属性的百分比 实现文字逐渐展示的视觉效果   三、代码示例1、html部分 &lt;div class&#x3D;&quot;body&quot;&gt;     &lt;div class&#x3D;&amp;#x27;box&amp;#x27;&gt;         &lt;p&gt;             React是用于构建用户">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-09-21T09:54:26.043Z">
-<meta property="article:modified_time" content="2024-09-21T09:54:26.043Z">
+<meta property="og:image" content="https://wangyuan.online/asstes/%E6%96%87%E5%AD%97%E9%80%90%E8%A1%8C%E6%98%BE%E7%A4%BA.gif">
+<meta property="article:published_time" content="2024-10-08T21:00:31.000Z">
+<meta property="article:modified_time" content="2024-10-08T13:36:27.434Z">
 <meta property="article:author" content="wangyuan">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="text">
+<meta property="article:tag" content="animation">
 <meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://wangyuan.online/asstes/%E6%96%87%E5%AD%97%E9%80%90%E8%A1%8C%E6%98%BE%E7%A4%BA.gif">
   
   
   
-  <title>Hello World - 阿源的小站</title>
+  <title>文字逐行显示 - 阿源的小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -172,7 +177,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">Hello World</span>
+            <span id="subtitle">文字逐行显示</span>
           
         </div>
 
@@ -183,8 +188,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-09-21 09:54" pubdate>
-          2024年9月21日 上午
+        <time datetime="2024-10-08 21:00" pubdate>
+          2024年10月8日 晚上
         </time>
       </span>
     
@@ -195,7 +200,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          274 字
+          1.6k 字
         
       </span>
     
@@ -206,7 +211,7 @@
         
         
         
-          3 分钟
+          14 分钟
         
       </span>
     
@@ -244,32 +249,76 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">文字逐行显示</h1>
             
             
               <div class="markdown-body">
                 
-                <div class="code-wrapper"><pre><code class="hljs ada">先前我总觉得思念二字太俗气，自从遇见了你，我才自知是个俗人
-<span class="hljs-comment">-- 《甲方乙方》</span></code></pre></div>
+                <h4 id="一、先看效果"><a href="#一、先看效果" class="headerlink" title="一、先看效果"></a>一、先看效果</h4><p><img src="/../asstes/%E6%96%87%E5%AD%97%E9%80%90%E8%A1%8C%E6%98%BE%E7%A4%BA.gif" srcset="/img/loading.gif" lazyload alt="文字逐行显示演示"></p>
+<h4 id="二、实现思路"><a href="#二、实现思路" class="headerlink" title="二、实现思路"></a>二、实现思路</h4><p>1、复制一层文字放在实际文字上<br>2、通过控制上层文字的背景颜色的 <strong>渐变属性的百分比</strong> 实现文字逐渐展示的视觉效果  </p>
+<h4 id="三、代码示例"><a href="#三、代码示例" class="headerlink" title="三、代码示例"></a>三、代码示例</h4><p>1、html部分</p>
+<div class="code-wrapper"><pre><code class="hljs html5">&lt;div class=&quot;body&quot;&gt;
+    &lt;div class=&#x27;box&#x27;&gt;
+        &lt;p&gt;
+            React是用于构建用户界面的JavaScript库， [1]起源于Facebook的内部项目，该公司对市场上所有 JavaScript MVC框架都不满意，决定自行开发一套，用于架设Instagram的网站。于2013年5月开源。React的早期原型被称为“FaxJS”，它是由Facebook工程师Jordan Walke开发，因为他深受XHP的影响，XHP是一个简单的PHP HTML组件框架。React于2011年首次亮相，首次用于Facebook的Newsfeed。第二年在Instagram中使用。2013年5月，React在美国JSConf开源。 [2]
+        &lt;/p&gt;
+        &lt;p class=&quot;p&quot;&gt;
+            &lt;span class=&#x27;text&#x27;&gt;React是用于构建用户界面的JavaScript库， [1]起源于Facebook的内部项目，该公司对市场上所有 JavaScript MVC框架都不满意，决定自行开发一套，用于架设Instagram的网站。于2013年5月开源。React的早期原型被称为“FaxJS”，它是由Facebook工程师Jordan Walke开发，因为他深受XHP的影响，XHP是一个简单的PHP HTML组件框架。React于2011年首次亮相，首次用于Facebook的Newsfeed。第二年在Instagram中使用。2013年5月，React在美国JSConf开源。 [2]
+            &lt;/span&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre></div>
 
-<div class="code-wrapper"><pre><code class="hljs ada">当你在我眼前的时候，你是一切；当你不在我眼前的时候，一切是你
-<span class="hljs-comment">-- 《编辑部的故事》</span></code></pre></div>
+<p>2、css样式</p>
+<div class="code-wrapper"><pre><code class="hljs css">
+<span class="hljs-selector-class">.body</span>&#123;
+  <span class="hljs-attribute">background</span>:<span class="hljs-number">#000000</span>;
+  <span class="hljs-attribute">height</span>:<span class="hljs-number">200px</span>
+&#125;
+*&#123;
+  <span class="hljs-attribute">margin</span>:<span class="hljs-number">0</span>;
+  <span class="hljs-attribute">padding</span>:<span class="hljs-number">0</span>;
+&#125;
+<span class="hljs-selector-class">.box</span>&#123;
+  <span class="hljs-attribute">position</span>:relative;
+  <span class="hljs-attribute">color</span>:<span class="hljs-number">#FFFFFF</span>;
+&#125;
+<span class="hljs-selector-class">.p</span>&#123;
+  <span class="hljs-attribute">position</span>:absolute;
+  inset: <span class="hljs-number">0</span>; 
+&#125;
+<span class="hljs-keyword">@property</span> --p&#123;
+  syntax:<span class="hljs-string">&#x27;&lt;percentage&gt;&#x27;</span>;
+  initial-value:<span class="hljs-number">0%</span>;
+  inherits:false;
+&#125;
+<span class="hljs-selector-class">.text</span>&#123;
+  <span class="hljs-attribute">background</span>:<span class="hljs-built_in">linear-gradient</span>(
+    to right,
+    transparent <span class="hljs-built_in">var</span>(--p),
+    <span class="hljs-number">#000000</span> <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--p) + <span class="hljs-number">10px</span>));
+    <span class="hljs-attribute">color</span>:transparent;
+  <span class="hljs-attribute">animation</span>:erase <span class="hljs-number">7s</span> linear forwards;
+&#125;
 
-<div class="code-wrapper"><pre><code class="hljs ada">有几次我梦见你，你如此清晰的站在我面前，是我激动不已，一旦惊醒，心如刀绞
-<span class="hljs-comment">-- 《不见不散》</span></code></pre></div>
 
-<div class="code-wrapper"><pre><code class="hljs ada">人生乐在相知心，我就是一把干柴
-<span class="hljs-comment">-- 《编辑部的故事》</span></code></pre></div>
+<span class="hljs-keyword">@keyframes</span> erase &#123;
+  <span class="hljs-selector-tag">to</span>&#123;
+    <span class="hljs-attr">--p</span>:<span class="hljs-number">100%</span>
+  &#125;
+&#125;</code></pre></div>
 
-<div class="code-wrapper"><pre><code class="hljs ada">我本将心向明月，奈何明月照沟渠
-<span class="hljs-comment">-- 《天下无贼》</span></code></pre></div>
+<h4 id="四、重点部分"><a href="#四、重点部分" class="headerlink" title="四、重点部分"></a>四、重点部分</h4><p>如果单纯的使用动画，并不能改变<code>--p</code>属性的值，但是在CSS中的<code>@property</code>功能，能够声明一个自定义属性，把自定义属性<code>--p</code>变成和<code>color</code>、<code>background</code>一样的属性  </p>
+<p>语法示例</p>
+<div class="code-wrapper"><pre><code class="hljs css"><span class="hljs-keyword">@property</span> --property-name &#123;
+  syntax: <span class="hljs-string">&quot;&lt;color&gt;&quot;</span>;
+  inherits: false;
+  initial-value: <span class="hljs-number">#c0ffee</span>;
+&#125;</code></pre></div>
 
-<div class="code-wrapper"><pre><code class="hljs ada">万物与我都是荒诞的静寂，此时我想你了
-<span class="hljs-comment">-- 佩索阿《我的心迟到了》</span></code></pre></div>
-<div class="code-wrapper"><pre><code class="hljs ada">傍晚的月亮照着花开的田野，我无端感觉你在等我，所以我来了
-<span class="hljs-comment">-- 与谢野晶子</span></code></pre></div>
-<div class="code-wrapper"><pre><code class="hljs ada">现在天色暗了，我也倦了，我爱你，永永远远。
-<span class="hljs-comment">-- 奥德丽尼芬格《时间旅行者的妻子》</span></code></pre></div>
+<p>其中 <code>syntax</code>和<code>inherits</code>字段是必填项。<br>1、<code>syntax</code>声明自定义属性是什么类型的数据，比如颜色、百分比、字符串等<br>2、<code>inherits</code> 表示是否必须<br>3、<code>initial-value</code> 表示如果必填的默认值</p>
+<p><a target="_blank" rel="noopener" href="https://drafts.css-houdini.org/css-properties-values-api/#supported-names">点击查看syntax属性的可选值</a></p>
+
                 
               </div>
             
@@ -277,6 +326,17 @@
             <div>
               <div class="post-metas my-3">
   
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/css/">#css</a>
+      
+        <a href="/tags/text/">#text</a>
+      
+        <a href="/tags/animation/">#animation</a>
+      
+    </div>
   
 </div>
 
@@ -292,8 +352,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/07/11/%E7%BA%AFcss%E5%BC%B9%E7%AA%97%E5%A4%84%E7%90%86/" title="纯css弹窗处理">
-                        <span class="hidden-mobile">纯css弹窗处理</span>
+                      <a href="/2024/10/08/hello-world/" title="Hello World">
+                        <span class="hidden-mobile">Hello World</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

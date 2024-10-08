@@ -17,8 +17,8 @@
   <meta name="keywords" content="">
   
     <meta property="og:type" content="website">
-<meta property="og:title" content="标签 - css">
-<meta property="og:url" content="https://wangyuan.online/tags/css/index.html">
+<meta property="og:title" content="阿源的小站">
+<meta property="og:url" content="https://wangyuan.online/page/2/index.html">
 <meta property="og:site_name" content="阿源的小站">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="wangyuan">
@@ -26,7 +26,7 @@
   
   
   
-  <title>标签 - css - 阿源的小站</title>
+  <title>阿源的小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -80,7 +80,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 80vh;">
+<div class="header-inner" style="height: 100vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -162,7 +162,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">标签 - css</span>
+            <span id="subtitle" data-typed-text="知我者谓我心忧 不知我者谓我何求"></span>
           
         </div>
 
@@ -186,54 +186,61 @@
     
       <div class="container nopadding-x-md">
         <div id="board"
-          >
+          style="margin-top: 0">
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-<div class="list-group">
-  <p class="h4">共计 4 篇文章</p>
-  <hr>
-  
-  
+
+  <div class="row mx-auto index-card">
     
+    
+    <article class="col-12 col-md-12 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2022/12/12/css-clip-path/" target="_self">
+          css_clip-path
+        </a>
+      </h1>
+
       
-      <p class="h5">2024</p>
-    
-    <a href="/2024/10/08/%E6%96%87%E5%AD%97%E9%80%90%E8%A1%8C%E6%98%BE%E7%A4%BA/" class="list-group-item list-group-item-action">
-      <time>10-08</time>
-      <div class="list-group-item-title">文字逐行显示</div>
-    </a>
-  
-    
-    <a href="/2024/07/11/%E7%BA%AFcss%E5%BC%B9%E7%AA%97%E5%A4%84%E7%90%86/" class="list-group-item list-group-item-action">
-      <time>07-11</time>
-      <div class="list-group-item-title">纯css弹窗处理</div>
-    </a>
-  
-    
-      
-      <p class="h5">2023</p>
-    
-    <a href="/2023/02/25/BEM%E5%91%BD%E5%90%8D%E7%AE%A1%E7%90%86%E6%A0%B7%E5%BC%8F/" class="list-group-item list-group-item-action">
-      <time>02-25</time>
-      <div class="list-group-item-title">BEM命名管理样式</div>
-    </a>
-  
-    
-      
-      <p class="h5">2022</p>
-    
-    <a href="/2022/12/12/css-clip-path/" class="list-group-item list-group-item-action">
-      <time>12-12</time>
-      <div class="list-group-item-title">css_clip-path</div>
-    </a>
-  
-</div>
+      <a class="index-excerpt index-excerpt__noimg" href="/2022/12/12/css-clip-path/" target="_self">
+        <div>
+          clip-path “clip-path的作用是使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。”  直接写在选择器中： div&#123;     width:50px;     height:50px;     clip-path:xxxxx; &#125; 基本语法clip-source | basic-shape | geometry-box | none \ 分别表示:
+        </div>
+      </a>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2022-12-12 21:31" pubdate>
+              2022-12-12
+            </time>
+          </div>
+        
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/css/">#css</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
 
 
+
+  <nav aria-label="navigation">
+    <span class="pagination" id="pagination">
+      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </span>
+  </nav>
 
 
 
@@ -321,6 +328,51 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        jQuery.ajax({
+          type: 'GET',
+          url: 'https://v1.jinrishici.com/shuqing/aiqing',
+          headers: {},
+          dataType: 'json',
+          success: function(result) {
+            var apiText;
+            if (result) {
+              var keys = 'content'.split(',');
+              if (result instanceof Array) {
+                result = result[0];
+              }
+              for (const k of keys) {
+                var value = result[k];
+                if (typeof value === 'string') {
+                  apiText = value;
+                  break;
+                } else if (value instanceof Object) {
+                  result = value;
+                }
+              }
+            }
+            apiText ? typing(apiText) : typing(text);
+          },
+          error: function(xhr, status, error) {
+            if (error) {
+              console.error('Failed to request https://v1.jinrishici.com/shuqing/aiqing:', error);
+            }
+            typing(text);
+          }
+        })
+      
+    })(window, document);
+  </script>
 
 
 
