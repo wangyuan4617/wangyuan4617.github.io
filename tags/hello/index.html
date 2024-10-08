@@ -17,8 +17,8 @@
   <meta name="keywords" content="">
   
     <meta property="og:type" content="website">
-<meta property="og:title" content="阿源的小站">
-<meta property="og:url" content="https://wangyuan.online/page/2/index.html">
+<meta property="og:title" content="标签 - hello">
+<meta property="og:url" content="https://wangyuan.online/tags/hello/index.html">
 <meta property="og:site_name" content="阿源的小站">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="wangyuan">
@@ -26,7 +26,7 @@
   
   
   
-  <title>阿源的小站</title>
+  <title>标签 - hello - 阿源的小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -80,7 +80,7 @@
   <header>
     
 
-<div class="header-inner" style="height: 100vh;">
+<div class="header-inner" style="height: 80vh;">
   <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand" href="/">
@@ -162,7 +162,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="知我者谓我心忧 不知我者谓我何求"></span>
+            <span id="subtitle">标签 - hello</span>
           
         </div>
 
@@ -186,61 +186,30 @@
     
       <div class="container nopadding-x-md">
         <div id="board"
-          style="margin-top: 0">
+          >
           
           <div class="container">
             <div class="row">
               <div class="col-12 col-md-10 m-auto">
                 
 
-
-  <div class="row mx-auto index-card">
+<div class="list-group">
+  <p class="h4">共计 1 篇文章</p>
+  <hr>
+  
+  
     
-    
-    <article class="col-12 col-md-12 mx-auto index-info">
-      <h1 class="index-header">
-        
-        <a href="/2022/12/10/hello-world/" target="_self">
-          Hello World
-        </a>
-      </h1>
-
       
-      <a class="index-excerpt index-excerpt__noimg" href="/2022/12/10/hello-world/" target="_self">
-        <div>
-          先前我总觉得思念二字太俗气，自从遇见了你，我才自知是个俗人 -- 《甲方乙方》  当你在我眼前的时候，你是一切；当你不在我眼前的时候，一切是你 -- 《编辑部的故事》  有几次我梦见你，你如此清晰的站在我面前，是我激动不已，一旦惊醒，心如刀绞 -- 《不见不散》  人生乐在相知心，我就是一把干柴 -- 《编辑部的故事》  我本将心向明月，奈何明月照沟渠 -- 《天下无贼》  万物与我都是荒诞的静寂
-        </div>
-      </a>
-
-      <div class="index-btm post-metas">
-        
-          <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>
-            <time datetime="2022-12-10 21:31" pubdate>
-              2022-12-10
-            </time>
-          </div>
-        
-        
-        
-          <div class="post-meta">
-            <i class="iconfont icon-tags"></i>
-            
-              <a href="/tags/hello/">#hello</a>
-            
-          </div>
-        
-      </div>
-    </article>
-  </div>
+      <p class="h5">2022</p>
+    
+    <a href="/2022/12/10/hello-world/" class="list-group-item list-group-item-action">
+      <time>12-10</time>
+      <div class="list-group-item-title">Hello World</div>
+    </a>
+  
+</div>
 
 
-
-  <nav aria-label="navigation">
-    <span class="pagination" id="pagination">
-      <a class="extend prev" rel="prev" href="/"><i class="iconfont icon-arrowleft"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
-    </span>
-  </nav>
 
 
 
@@ -328,51 +297,6 @@
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
-
-  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
-  <script>
-    (function (window, document) {
-      var typing = Fluid.plugins.typing;
-      var subtitle = document.getElementById('subtitle');
-      if (!subtitle || !typing) {
-        return;
-      }
-      var text = subtitle.getAttribute('data-typed-text');
-      
-        jQuery.ajax({
-          type: 'GET',
-          url: 'https://v1.jinrishici.com/shuqing/aiqing',
-          headers: {},
-          dataType: 'json',
-          success: function(result) {
-            var apiText;
-            if (result) {
-              var keys = 'content'.split(',');
-              if (result instanceof Array) {
-                result = result[0];
-              }
-              for (const k of keys) {
-                var value = result[k];
-                if (typeof value === 'string') {
-                  apiText = value;
-                  break;
-                } else if (value instanceof Object) {
-                  result = value;
-                }
-              }
-            }
-            apiText ? typing(apiText) : typing(text);
-          },
-          error: function(xhr, status, error) {
-            if (error) {
-              console.error('Failed to request https://v1.jinrishici.com/shuqing/aiqing:', error);
-            }
-            typing(text);
-          }
-        })
-      
-    })(window, document);
-  </script>
 
 
 
