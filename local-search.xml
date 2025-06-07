@@ -4,6 +4,29 @@
   
   
   <entry>
+    <title>常用DNS</title>
+    <link href="/2025/06/07/%E5%B8%B8%E7%94%A8DNS/"/>
+    <url>/2025/06/07/%E5%B8%B8%E7%94%A8DNS/</url>
+    
+    <content type="html"><![CDATA[<h3 id="一、公共DNS地址"><a href="#一、公共DNS地址" class="headerlink" title="一、公共DNS地址"></a>一、公共DNS地址</h3><table><thead><tr><th align="center">名称</th><th align="center">IPv4主</th><th align="center">IPv4备</th><th align="center">IPv6主</th><th align="center">IPv6备</th></tr></thead><tbody><tr><td align="center"><a href="https://www.alidns.com/">阿里云</a></td><td align="center">223.5.5.5</td><td align="center">223.6.6.6</td><td align="center">2400:3200::1</td><td align="center">2400:3200:baba::1</td></tr><tr><td align="center"><a href="https://www.dnspod.cn/products/publicdns">腾讯</a></td><td align="center">119.29.29.29</td><td align="center"></td><td align="center">2402:4e00::</td><td align="center"></td></tr><tr><td align="center"><a href="https://dudns.baidu.com/index.html">百度</a></td><td align="center">180.76.76.76</td><td align="center"></td><td align="center">2400:da00::6666</td><td align="center"></td></tr><tr><td align="center"><a href="https://www.114dns.com/">114</a></td><td align="center">114.114.114.114</td><td align="center">114.114.115.115</td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><a href="https://tuna.moe/">中国清华大学TUNA</a></td><td align="center">101.6.6.6</td><td align="center"></td><td align="center">2001:da8::666</td><td align="center"></td></tr><tr><td align="center">字节跳动</td><td align="center">180.184.1.1</td><td align="center">180.184.2.2</td><td align="center"></td><td align="center"></td></tr><tr><td align="center"><a href="https://developers.cloudflare.com/1.1.1.1/setup/router/">Cloudflare</a></td><td align="center">1.1.1.1</td><td align="center">1.0.0.1</td><td align="center">2606:4700:4700::1111</td><td align="center">2606:4700:4700::1001</td></tr></tbody></table><h3 id="二、运营商dns"><a href="#二、运营商dns" class="headerlink" title="二、运营商dns"></a>二、运营商dns</h3><table><thead><tr><th align="center">名称</th><th align="center">主DNS</th><th align="center">备DNS</th></tr></thead><tbody><tr><td align="center">河南联通</td><td align="center">202.102.224.68</td><td align="center">202.102.227.68</td></tr></tbody></table><h3 id="三、说明"><a href="#三、说明" class="headerlink" title="三、说明"></a>三、说明</h3><p> 运营商dns局限性很大、尽量使用公共dns</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>DNS</tag>
+      
+      <tag>AdGuard</tag>
+      
+      <tag>AdGuardHome</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>文字逐行显示</title>
     <link href="/2024/10/08/%E6%96%87%E5%AD%97%E9%80%90%E8%A1%8C%E6%98%BE%E7%A4%BA/"/>
     <url>/2024/10/08/%E6%96%87%E5%AD%97%E9%80%90%E8%A1%8C%E6%98%BE%E7%A4%BA/</url>
