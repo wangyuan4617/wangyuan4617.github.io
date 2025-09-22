@@ -8,7 +8,7 @@
     "deploy": "hexo deploy",
     "server": "hexo server",
     "dev": "hexo server",
-    "new": "hexo new 文字逐行显示"
+    "new": "hexo new 学习词语"
   },
   "hexo": {
     "version": "7.3.0"
