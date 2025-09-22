@@ -16,26 +16,21 @@
   <meta name="author" content="wangyuan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言先看一个效果   很简单，通过鼠标移入方向的不同做一些操作，在这个例子中只讨论实现判断鼠标移入方向的方式 思考 例如在这个蓝色方框中，通过对角线分割四个单独的三角形，我们在三角形的焦点建立一个坐标系，在这个方框中对于当前坐标系来说，我们只要计算出来方框中某一个点在坐标系中的位置到原点的连接线相对于 x 轴正轴方向的角度就可以判断出点在方框中的位置。 代码&#x2F;&#x2F;  获取元素 const conta">
+    <meta name="description" content="一、两字词语   词语 释义 备注    对立 指两种事务或一种事务中的两个方面之间相互抵消、抑制、中和或其他的相反作用    博弈 比喻为谋取利益而竞争    二、三字词语   词语 释义 备注    凝聚力 比喻能使成员团结协作的力量    三、四字词语   词语 释义 备注    不谋而合 指事先没有商量过，意见或行动却完全一致    殊途同归 指通过不同的途径，达到同一个目的，比喻采用“不">
 <meta property="og:type" content="article">
-<meta property="og:title" content="鼠标移入方向的解决方式">
-<meta property="og:url" content="https://wangyuan.online/2023/03/12/%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%85%A5%E6%96%B9%E5%90%91%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E5%BC%8F/index.html">
+<meta property="og:title" content="学习词语">
+<meta property="og:url" content="https://wangyuan.online/2025/09/22/%E5%AD%A6%E4%B9%A0%E8%AF%8D%E8%AF%AD/index.html">
 <meta property="og:site_name" content="阿源的小站">
-<meta property="og:description" content="前言先看一个效果   很简单，通过鼠标移入方向的不同做一些操作，在这个例子中只讨论实现判断鼠标移入方向的方式 思考 例如在这个蓝色方框中，通过对角线分割四个单独的三角形，我们在三角形的焦点建立一个坐标系，在这个方框中对于当前坐标系来说，我们只要计算出来方框中某一个点在坐标系中的位置到原点的连接线相对于 x 轴正轴方向的角度就可以判断出点在方框中的位置。 代码&#x2F;&#x2F;  获取元素 const conta">
+<meta property="og:description" content="一、两字词语   词语 释义 备注    对立 指两种事务或一种事务中的两个方面之间相互抵消、抑制、中和或其他的相反作用    博弈 比喻为谋取利益而竞争    二、三字词语   词语 释义 备注    凝聚力 比喻能使成员团结协作的力量    三、四字词语   词语 释义 备注    不谋而合 指事先没有商量过，意见或行动却完全一致    殊途同归 指通过不同的途径，达到同一个目的，比喻采用“不">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://oss.wangyuan.cool/blog/screenshots.gif">
-<meta property="og:image" content="https://oss.wangyuan.cool/blog/zhuobiaoxi.jpg">
-<meta property="article:published_time" content="2023-03-12T18:26:56.000Z">
+<meta property="article:published_time" content="2025-09-22T14:15:02.000Z">
 <meta property="article:modified_time" content="2025-09-22T07:11:33.105Z">
 <meta property="article:author" content="wangyuan">
-<meta property="article:tag" content="animation">
-<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://oss.wangyuan.cool/blog/screenshots.gif">
   
   
   
-  <title>鼠标移入方向的解决方式 - 阿源的小站</title>
+  <title>学习词语 - 阿源的小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -177,7 +172,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">鼠标移入方向的解决方式</span>
+            <span id="subtitle">学习词语</span>
           
         </div>
 
@@ -188,8 +183,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-03-12 18:26" pubdate>
-          2023年3月12日 晚上
+        <time datetime="2025-09-22 14:15" pubdate>
+          2025年9月22日 下午
         </time>
       </span>
     
@@ -200,7 +195,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.2k 字
+          504 字
         
       </span>
     
@@ -211,7 +206,7 @@
         
         
         
-          11 分钟
+          5 分钟
         
       </span>
     
@@ -249,49 +244,138 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">鼠标移入方向的解决方式</h1>
+            <h1 style="display: none">学习词语</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>先看一个效果 <br> <img src="https://oss.wangyuan.cool/blog/screenshots.gif" srcset="/img/loading.gif" lazyload alt="效果展示"> <br>很简单，通过鼠标移入方向的不同做一些操作，在这个例子中只讨论实现判断鼠标移入方向的方式</p>
-<h3 id="思考"><a href="#思考" class="headerlink" title="思考"></a>思考</h3><p><img src="https://oss.wangyuan.cool/blog/zhuobiaoxi.jpg" srcset="/img/loading.gif" lazyload alt="坐标系"> <br>例如在这个蓝色方框中，通过对角线分割四个单独的三角形，我们在三角形的焦点建立一个坐标系，在这个方框中对于当前坐标系来说，我们只要计算出来方框中某一个点在坐标系中的位置到原点的连接线相对于 x 轴正轴方向的角度就可以判断出点在方框中的位置。</p>
-<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><div class="code-wrapper"><pre><code class="hljs arduino"><span class="hljs-comment">//  获取元素</span>
-<span class="hljs-type">const</span> container = <span class="hljs-built_in">ref</span>();
-<span class="hljs-type">const</span> mainFun = () =&gt; &#123;
-  <span class="hljs-comment">//得到指定元素的宽高数据</span>
-  let rect = container.value.<span class="hljs-built_in">getBoundingClientRect</span>();
-  <span class="hljs-comment">//通过元素的宽和高计算出∠θ的反正切，也就是计算出右侧三角形的分界弧度</span>
-  <span class="hljs-type">const</span> theta = Math.<span class="hljs-built_in">atan</span>(rect.height / rect.width);
-  <span class="hljs-comment">//给元素添加鼠标移入时间</span>
-  container.value.<span class="hljs-built_in">addEventListener</span>(<span class="hljs-string">&quot;mouseenter&quot;</span>, (e) =&gt; &#123;
-    <span class="hljs-comment">// 得到鼠标移入时在坐标系中对应的x轴的值</span>
-    <span class="hljs-type">const</span> x = e.offsetX - rect.width / <span class="hljs-number">2</span>;
-    <span class="hljs-comment">// 得到鼠标移入时在坐标系中对应的y轴的值</span>
-    <span class="hljs-type">const</span> y = rect.height / <span class="hljs-number">2</span> - e.offsetY;
-    <span class="hljs-comment">// math.atan2是js提供的方法，返回正x轴到从(0,0)点到(x,y)点之间的平面角度，计算出鼠标移入时的坐标点到x正轴的角度，</span>
-    <span class="hljs-type">const</span> d = Math.<span class="hljs-built_in">atan2</span>(y, x);
-    let dire;
-    <span class="hljs-comment">// 通过角度判断是从哪个方向移入的</span>
-    <span class="hljs-keyword">if</span> (d &lt; theta &amp;&amp; d &gt;= -theta) &#123;
-      dire = <span class="hljs-string">&quot;right&quot;</span>;
-    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (d &gt;= theta &amp;&amp; d &lt; Math.PI - theta) &#123;
-      dire = <span class="hljs-string">&quot;up&quot;</span>;
-    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (d &lt; -theta &amp;&amp; d &gt;= theta - Math.PI) &#123;
-      dire = <span class="hljs-string">&quot;down&quot;</span>;
-    &#125; <span class="hljs-keyword">else</span> &#123;
-      dire = <span class="hljs-string">&quot;left&quot;</span>;
-    &#125;
-    <span class="hljs-comment">//通过添加类名改变元素的动画效果和移入效果</span>
-    container.value.classList.<span class="hljs-built_in">add</span>(dire);
-  &#125;);
-  <span class="hljs-comment">//移出鼠标时还原类名</span>
-  container.value.<span class="hljs-built_in">addEventListener</span>(<span class="hljs-string">&quot;mouseleave&quot;</span>, () =&gt; &#123;
-    container.value.className = <span class="hljs-string">&quot;mouse-entry-direction-body&quot;</span>;
-  &#125;);
-&#125;;</code></pre></div>
-
-<h3 id="over"><a href="#over" class="headerlink" title="over"></a>over</h3><p>通过在 container 上覆盖三角元素的方法也可以解决这个问题，但是会增加不必要的 html 元素，并且如果需要在元素中有更多操作时更复杂。</p>
+                <h3 id="一、两字词语"><a href="#一、两字词语" class="headerlink" title="一、两字词语"></a>一、两字词语</h3><table>
+<thead>
+<tr>
+<th align="center">词语</th>
+<th align="left">释义</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">对立</td>
+<td align="left">指两种事务或一种事务中的两个方面之间相互抵消、抑制、中和或其他的相反作用</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">博弈</td>
+<td align="left">比喻为谋取利益而竞争</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h3 id="二、三字词语"><a href="#二、三字词语" class="headerlink" title="二、三字词语"></a>二、三字词语</h3><table>
+<thead>
+<tr>
+<th align="center">词语</th>
+<th align="left">释义</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">凝聚力</td>
+<td align="left">比喻能使成员团结协作的力量</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<h3 id="三、四字词语"><a href="#三、四字词语" class="headerlink" title="三、四字词语"></a>三、四字词语</h3><table>
+<thead>
+<tr>
+<th align="center">词语</th>
+<th align="left">释义</th>
+<th align="left">备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">不谋而合</td>
+<td align="left">指事先没有商量过，意见或行动却完全一致</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">殊途同归</td>
+<td align="left">指通过不同的途径，达到同一个目的，比喻采用“不同的方法”而得到相同的结果</td>
+<td align="left">需要体现 “不同的方法”</td>
+</tr>
+<tr>
+<td align="center">正襟危坐</td>
+<td align="left">指整理好衣襟端端正正的坐着，形容严肃或拘谨的样子</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">*蹑足其间</td>
+<td align="left">字面意思是脚踩在里头；比喻参加进去</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">首鼠两端</td>
+<td align="left">指犹豫不决、动摇不定</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">不期而遇</td>
+<td align="left">指没有约定而遇见</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">举世无双</td>
+<td align="left">指全世界没有第二个，表达的程度较重</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">享誉中外</td>
+<td align="left">指在国内外都有很高的赞誉</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">声名远播</td>
+<td align="left">指名声传播的很广，远近闻名</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">闻名遐迩</td>
+<td align="left">形容名声很大，远近都知道</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">日拱一卒</td>
+<td align="left">指每天像象棋的卒子那样前进一点，形容坚持努力，可以体现努力转眼</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">青灯黄卷</td>
+<td align="left">指清苦的攻读生活，侧重的是“读书的条件艰苦”</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">筚路蓝缕</td>
+<td align="left">形容创业的艰苦</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">照本宣科</td>
+<td align="left">一般形容讲课、发言等死板的按照课文、讲稿，没有发挥，不生动</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">无源之水</td>
+<td align="left">比喻没有基础的事务</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">见微知著</td>
+<td align="left">指见到一点苗头就能知道其本质和发展的趋向，侧重“以小见大”</td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="center">实事求是</td>
+<td align="left">指从实际情况出发，不夸大、不缩小，正确的对待和处理问题</td>
+<td align="left"></td>
+</tr>
+</tbody></table>
 
                 
               </div>
@@ -300,15 +384,6 @@
             <div>
               <div class="post-metas my-3">
   
-  
-    <div class="post-meta">
-      <i class="iconfont icon-tags"></i>
-      
-        <a href="/tags/animation/">#animation</a>
-      
-        <a href="/tags/js/">#js</a>
-      
-    </div>
   
 </div>
 
@@ -320,18 +395,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/04/09/amd%E6%98%BE%E5%8D%A1%E5%85%89%E6%A0%87%E5%8F%98%E7%99%BD/" title="amd显卡光标变白">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">amd显卡光标变白</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/25/BEM%E5%91%BD%E5%90%8D%E7%AE%A1%E7%90%86%E6%A0%B7%E5%BC%8F/" title="BEM命名管理样式">
-                        <span class="hidden-mobile">BEM命名管理样式</span>
+                      <a href="/2025/06/07/%E5%B8%B8%E7%94%A8DNS/" title="常用DNS">
+                        <span class="hidden-mobile">常用DNS</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
