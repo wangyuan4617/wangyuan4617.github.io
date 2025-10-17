@@ -8,7 +8,7 @@
     "deploy": "hexo deploy",
     "server": "hexo server",
     "dev": "hexo server",
-    "new": "hexo new 学习词语"
+    "new": "hexo new 浏览器1px边框的问题"
   },
   "hexo": {
     "version": "7.3.0"
