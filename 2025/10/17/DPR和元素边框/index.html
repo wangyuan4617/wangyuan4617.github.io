@@ -16,22 +16,24 @@
   <meta name="author" content="wangyuan">
   <meta name="keywords" content="">
   
-    <meta name="description" content="clip-path “clip-path的作用是使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。”  直接写在选择器中： div&#123;     width:50px;     height:50px;     clip-path:xxxxx; &#125; 基本语法clip-source | basic-shape | geometry-box | none \ 分别表示:">
+    <meta name="description" content="一、设备像素比(DPR)window.devicePixelRatio设备像素比(DPR) 设备像素比的值与系统缩放和浏览器缩放有关默认情况下 DPR 为 1,表示一个物理像素对应一个 css 像素如果缩放设置到了 200%(不论是系统缩放还是浏览器缩放)，那么表示图像要放大两倍，就需要在两个物理像素点中渲染一个 css 像素的内容，此时 DPR 为 2 window.devicePixelRat">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css_clip-path">
-<meta property="og:url" content="https://wangyuan.online/2022/12/12/css-clip-path/index.html">
+<meta property="og:title" content="DPR和元素边框">
+<meta property="og:url" content="https://wangyuan.online/2025/10/17/DPR%E5%92%8C%E5%85%83%E7%B4%A0%E8%BE%B9%E6%A1%86/index.html">
 <meta property="og:site_name" content="阿源的小站">
-<meta property="og:description" content="clip-path “clip-path的作用是使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。”  直接写在选择器中： div&#123;     width:50px;     height:50px;     clip-path:xxxxx; &#125; 基本语法clip-source | basic-shape | geometry-box | none \ 分别表示:">
+<meta property="og:description" content="一、设备像素比(DPR)window.devicePixelRatio设备像素比(DPR) 设备像素比的值与系统缩放和浏览器缩放有关默认情况下 DPR 为 1,表示一个物理像素对应一个 css 像素如果缩放设置到了 200%(不论是系统缩放还是浏览器缩放)，那么表示图像要放大两倍，就需要在两个物理像素点中渲染一个 css 像素的内容，此时 DPR 为 2 window.devicePixelRat">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2022-12-12T21:31:07.000Z">
-<meta property="article:modified_time" content="2025-10-17T06:30:23.465Z">
+<meta property="article:published_time" content="2025-10-17T12:01:20.000Z">
+<meta property="article:modified_time" content="2025-10-17T06:30:23.464Z">
 <meta property="article:author" content="wangyuan">
-<meta property="article:tag" content="css">
+<meta property="article:tag" content="DPR">
+<meta property="article:tag" content="设备像素比">
+<meta property="article:tag" content="CSS">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>css_clip-path - 阿源的小站</title>
+  <title>DPR和元素边框 - 阿源的小站</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -173,7 +175,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">css_clip-path</span>
+            <span id="subtitle">DPR和元素边框</span>
           
         </div>
 
@@ -184,8 +186,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-12-12 21:31" pubdate>
-          2022年12月12日 晚上
+        <time datetime="2025-10-17 12:01" pubdate>
+          2025年10月17日 中午
         </time>
       </span>
     
@@ -196,7 +198,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.1k 字
+          573 字
         
       </span>
     
@@ -207,7 +209,7 @@
         
         
         
-          10 分钟
+          5 分钟
         
       </span>
     
@@ -245,44 +247,33 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">css_clip-path</h1>
+            <h1 style="display: none">DPR和元素边框</h1>
             
             
               <div class="markdown-body">
                 
-                <h3 id="clip-path"><a href="#clip-path" class="headerlink" title="clip-path"></a>clip-path</h3><p> “clip-path的作用是使用裁剪方式创建元素的可显示区域。区域内的部分显示，区域外的隐藏。”</p>
-<div class="code-wrapper"><pre><code class="hljs css"> 直接写在选择器中：
-<span class="hljs-selector-tag">div</span>&#123;
-    <span class="hljs-attribute">width</span>:<span class="hljs-number">50px</span>;
-    <span class="hljs-attribute">height</span>:<span class="hljs-number">50px</span>;
-    <span class="hljs-attribute">clip-path</span>:xxxxx;
-&#125;</code></pre></div>
-<h3 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h3><p>clip-source | basic-shape | geometry-box | none \</p>
-<h4 id="分别表示"><a href="#分别表示" class="headerlink" title="分别表示:"></a>分别表示:</h4> <div class="code-wrapper"><pre><code class="hljs processing">clip-source = url <span class="hljs-comment">//可以通过url指定一个元素 \</span>
-basic-<span class="hljs-built_in">shape</span> = inset | circle | <span class="hljs-built_in">ellipse</span> | polygon  <span class="hljs-comment">// 可以指定图形分别对应 矩形 | 圆 | 椭圆 | 多边形\</span>
-geometry-<span class="hljs-built_in">box</span> = <span class="hljs-built_in">shape</span>-<span class="hljs-built_in">box</span> | <span class="hljs-built_in">fill</span>-<span class="hljs-built_in">box</span> | <span class="hljs-built_in">stroke</span>-<span class="hljs-built_in">box</span> | view-<span class="hljs-built_in">box</span>\</code></pre></div>
+                <h4 id="一、设备像素比-DPR"><a href="#一、设备像素比-DPR" class="headerlink" title="一、设备像素比(DPR)"></a>一、设备像素比(DPR)</h4><p><code>window.devicePixelRatio</code>设备像素比(DPR)</p>
+<p>设备像素比的值与系统缩放和浏览器缩放有关<br>默认情况下 DPR 为 1,表示一个物理像素对应一个 css 像素<br>如果缩放设置到了 200%(不论是系统缩放还是浏览器缩放)，那么表示图像要放大两倍，就需要在两个物理像素点中渲染一个 css 像素的内容，此时 DPR 为 2</p>
+<div class="code-wrapper"><pre><code class="hljs js"><span class="hljs-variable language_">window</span>.<span class="hljs-property">devicePixelRatio</span> = 系统缩放 x 浏览器缩放</code></pre></div>
 
-<h3 id="basic-shape举例"><a href="#basic-shape举例" class="headerlink" title="basic-shape举例"></a>basic-shape举例</h3><ul>
-<li><h4 id="inset"><a href="#inset" class="headerlink" title="inset()"></a>inset()</h4>  <div class="code-wrapper"><pre><code class="hljs vim">// inset可以接收<span class="hljs-number">5</span>个参数，分别为top,<span class="hljs-keyword">right</span>,bottom,<span class="hljs-keyword">left</span>, <span class="hljs-built_in">round</span> radius(可选值，表示圆角)
-clip-path: inset(<span class="hljs-number">10</span><span class="hljs-keyword">em</span> <span class="hljs-number">20</span><span class="hljs-keyword">em</span> <span class="hljs-number">10</span><span class="hljs-keyword">em</span> <span class="hljs-number">20</span><span class="hljs-keyword">em</span> <span class="hljs-built_in">round</span> <span class="hljs-number">5</span><span class="hljs-keyword">em</span>) // <span class="hljs-built_in">round</span>字符为固定字符
-</code></pre></div></li>
-<li><h4 id="cirle"><a href="#cirle" class="headerlink" title="cirle()"></a>cirle()</h4>  <div class="code-wrapper"><pre><code class="hljs awk"><span class="hljs-regexp">//</span> cirle可以接收<span class="hljs-number">2</span>个参数，分别为圆的半径，圆的中心点(默认为元素中心点)
-clip-path: cirle(<span class="hljs-number">50</span>% at <span class="hljs-number">16</span>px <span class="hljs-number">16</span>px) <span class="hljs-regexp">//</span>at 字符为固定字符</code></pre></div></li>
-<li><h4 id="ellipse"><a href="#ellipse" class="headerlink" title="ellipse()"></a>ellipse()</h4><div class="code-wrapper"><pre><code class="hljs xl"><span class="hljs-comment">// ellipse可以接收3个参数，分别为椭圆的X轴半径，椭圆的Y轴半径，圆的中心点(默认为元素中心点)</span>
-clip-<span class="hljs-built_in">path</span>: <span class="hljs-built_in">ellipse</span>(<span class="hljs-number">50</span>% <span class="hljs-number">60</span>% <span class="hljs-built_in">at</span> <span class="hljs-number">50</span>% <span class="hljs-number">50</span>%) <span class="hljs-comment">//at 字符为固定字符</span></code></pre></div>
-</li>
-<li><h4 id="polygon"><a href="#polygon" class="headerlink" title="polygon()"></a>polygon()</h4><div class="code-wrapper"><pre><code class="hljs mel"><span class="hljs-comment">// polygon可以接收多组数据，每组数据为拐点坐标(x y),每组数据通过逗号相隔</span>
-<span class="hljs-keyword">clip</span>-path: polygon(<span class="hljs-number">50</span>% <span class="hljs-number">0</span>,<span class="hljs-number">100</span>% <span class="hljs-number">50</span>%,<span class="hljs-number">0</span> <span class="hljs-number">100</span>%)</code></pre></div>
-<ol>
-<li>polygon菱形：  <div class="code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">clip</span>-path: polygon(<span class="hljs-number">50</span>% <span class="hljs-number">0</span>%, <span class="hljs-number">100</span>% <span class="hljs-number">50</span>%, <span class="hljs-number">50</span>% <span class="hljs-number">100</span>%, <span class="hljs-number">0</span>% <span class="hljs-number">50</span>%);</code></pre></div></li>
-<li>polygon梯形：  <div class="code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">clip</span>-path: polygon(<span class="hljs-number">20</span>% <span class="hljs-number">0</span>%, <span class="hljs-number">80</span>% <span class="hljs-number">0</span>%, <span class="hljs-number">100</span>% <span class="hljs-number">100</span>%, <span class="hljs-number">0</span>% <span class="hljs-number">100</span>%);</code></pre></div></li>
-<li>polygon平行四边形形：  <div class="code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">clip</span>-path: polygon(<span class="hljs-number">25</span>% <span class="hljs-number">0</span>%, <span class="hljs-number">100</span>% <span class="hljs-number">0</span>%, <span class="hljs-number">75</span>% <span class="hljs-number">100</span>%, <span class="hljs-number">0</span>% <span class="hljs-number">100</span>%);</code></pre></div></li>
-<li>polygon五边形：  <div class="code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">clip</span>-path: polygon(<span class="hljs-number">50</span>% <span class="hljs-number">0</span>%, <span class="hljs-number">100</span>% <span class="hljs-number">38</span>%, <span class="hljs-number">82</span>% <span class="hljs-number">100</span>%, <span class="hljs-number">18</span>% <span class="hljs-number">100</span>%, <span class="hljs-number">0</span>% <span class="hljs-number">38</span>%);</code></pre></div></li>
-<li>polygon右箭头：  <div class="code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">clip</span>-path: polygon(<span class="hljs-number">0</span>% <span class="hljs-number">20</span>%, <span class="hljs-number">60</span>% <span class="hljs-number">20</span>%, <span class="hljs-number">60</span>% <span class="hljs-number">0</span>%, <span class="hljs-number">100</span>% <span class="hljs-number">50</span>%, <span class="hljs-number">60</span>% <span class="hljs-number">100</span>%, <span class="hljs-number">60</span>% <span class="hljs-number">80</span>%, <span class="hljs-number">0</span>% <span class="hljs-number">80</span>%);</code></pre></div></li>
-<li>polygon左箭头  <div class="code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">clip</span>-path: polygon(<span class="hljs-number">40</span>% <span class="hljs-number">0</span>%, <span class="hljs-number">40</span>% <span class="hljs-number">20</span>%, <span class="hljs-number">100</span>% <span class="hljs-number">20</span>%, <span class="hljs-number">100</span>% <span class="hljs-number">80</span>%, <span class="hljs-number">40</span>% <span class="hljs-number">80</span>%, <span class="hljs-number">40</span>% <span class="hljs-number">100</span>%, <span class="hljs-number">0</span>% <span class="hljs-number">50</span>%);</code></pre></div></li>
-</ol>
-</li>
-</ul>
+<p>例如在 系统缩放为 125% 、浏览器缩放 100%时<br>浏览器的 devicePixelRatio 属性为 1 x 1.25 &#x3D; 1.25</p>
+<h4 id="二、系统设置"><a href="#二、系统设置" class="headerlink" title="二、系统设置"></a>二、系统设置</h4><p>在 14 寸的屏幕中 windows 系统默认的缩放比例为 150%,此时浏览器的 DPR 为 1.5</p>
+<p>🚩 系统默认缩放可以在 <a href="'ms-settings:display'">设置-&gt;缩放</a> 中设置</p>
+<h4 id="三、浏览器表现"><a href="#三、浏览器表现" class="headerlink" title="三、浏览器表现"></a>三、浏览器表现</h4><p>当设置 div 样式为：</p>
+<div class="code-wrapper"><pre><code class="hljs css"><span class="hljs-selector-class">.div</span> &#123;
+  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#333</span>;
+&#125;</code></pre></div>
+
+<p>在控制台-元素 右侧的[已计算]面板中会发现，border-width 的值并不是 1px，而是 0.666667px<br>此时的计算方式：</p>
+<div class="code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">css</span>像素点 = 物理像素点(想要实际肉眼看到的) / DPR
+
+<span class="hljs-attribute">0</span>.<span class="hljs-number">666667</span>px = <span class="hljs-number">1</span> / <span class="hljs-number">1</span>.<span class="hljs-number">5</span></code></pre></div>
+
+<h4 id="四、解决方案"><a href="#四、解决方案" class="headerlink" title="四、解决方案"></a>四、解决方案</h4><p>如果想强制按照代码中的数值渲染，可以使用以下方案</p>
+<div class="code-wrapper"><pre><code class="hljs css"><span class="hljs-comment">/*使用阴影模拟边框 */</span>
+<span class="hljs-selector-class">.div</span> &#123;
+  <span class="hljs-attribute">box-shadow</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span> <span class="hljs-number">1px</span> <span class="hljs-number">#333</span>;
+&#125;</code></pre></div>
 
                 
               </div>
@@ -295,7 +286,11 @@ clip-<span class="hljs-built_in">path</span>: <span class="hljs-built_in">ellips
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/css/">#css</a>
+        <a href="/tags/DPR/">#DPR</a>
+      
+        <a href="/tags/%E8%AE%BE%E5%A4%87%E5%83%8F%E7%B4%A0%E6%AF%94/">#设备像素比</a>
+      
+        <a href="/tags/CSS/">#CSS</a>
       
     </div>
   
@@ -309,18 +304,12 @@ clip-<span class="hljs-built_in">path</span>: <span class="hljs-built_in">ellips
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/02/25/BEM%E5%91%BD%E5%90%8D%E7%AE%A1%E7%90%86%E6%A0%B7%E5%BC%8F/" title="BEM命名管理样式">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">BEM命名管理样式</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/12/10/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2025/09/22/%E5%AD%A6%E4%B9%A0%E8%AF%8D%E8%AF%AD/" title="学习词语">
+                        <span class="hidden-mobile">学习词语</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
